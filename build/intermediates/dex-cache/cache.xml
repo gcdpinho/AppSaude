@@ -3,111 +3,111 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jar="/home/gcdpinho/Git/AppSaude/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
-        <dex dex="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.3.0_cbc57d3700457846afbc53b4b51ed20e26e85653\classes.dex" />
+        <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.3.0_86155608b389d83845ab4331d3ab6fbf6d28b21c/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
-        <dex dex="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.3.0_c379ad865694bb69620cb71f67459fc41bbd46d2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\exploded-aar\uk.co.chrisjenx\calligraphy\2.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ebcb0bcf52fab7c586f39717f7cb8de91748b1b1">
-        <dex dex="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\transforms\dex\debug\folders\1000\10\uk.co.chrisjenx-calligraphy-2.2.0_74ff068285ff21515a88a0c6f3097c82f595fcb7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="7f52ed76ca6505670056fcc20fa7636083bbaa5c">
-        <dex dex="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_870e9c1e17d78dfd82702232ffbf9a4cac852560\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9555eb8347ca265ee37497ab84124d046a78714c">
-        <dex dex="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_f793d297a3a33b4c1ece223233fa57457c111b73\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
-        <dex dex="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.3.0_55d54abaca36d5aa464f06156064e0f73a426cea\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
-        <dex dex="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.3.0_48fef8761cf7b11fba653f9854933d2951452514\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
-        <dex dex="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.3.0_e86997270f4ccf90802af98a56acc502d2ec40f9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="debf30ce0a7560396b6235edef77e447006454c2">
-        <dex dex="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.3.0_0d59cf87ffcfee98982d29c7ec05dad8f87931b8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
+        jar="/home/gcdpinho/Git/AppSaude/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
-        <dex dex="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.volley-volley-1.0.0_788c9fa90d2956d1d74666842fc16ca0c9320466\classes.dex" />
+        <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.volley-volley-1.0.0_7a528b77540655370f7ed8f32eb0d0e9096b451b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\anton\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
+        jar="/home/gcdpinho/Git/AppSaude/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.3.0_9b2ed0512165aca61475d63ea25141d1f7834a9c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/gcdpinho/Git/AppSaude/app/build/intermediates/exploded-aar/uk.co.chrisjenx/calligraphy/2.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ebcb0bcf52fab7c586f39717f7cb8de91748b1b1">
+        <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/uk.co.chrisjenx-calligraphy-2.2.0_2aad3f108f509c44033a8effde105a7fb0c785e1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/gcdpinho/Git/AppSaude/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.3.0_0d3dc45943a6fb2a930cc7b04c0e500019343e01/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/gcdpinho/Git/AppSaude/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.3.0_c5057d203b4c281b296630ec50efeb70b235e9f8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/opt/android-sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
-        <dex dex="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.3.0_1ec933c4c6dd9494f6538a6e8f0090c6d65caedb\classes.dex" />
+        <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.3.0_6d21ebb57f7a4cdbd0188f9b186b449bad74346b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jar="/home/gcdpinho/Git/AppSaude/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.3.0_7763e3782cb4229c551aa58d651610743d889907/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/gcdpinho/Git/AppSaude/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="73a914dba375281a3b74c9f36730c1409f2d9e37">
+        <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_cf1db6c5b5f19d3919637bb20dfa7e6d9ead91cb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/gcdpinho/Git/AppSaude/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.3.0_f844af7848598b6ac10cd149409bce5bb901ea8e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/gcdpinho/Git/AppSaude/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
-        <dex dex="C:\Users\anton\Desenvolvimento\AppSaude\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.3.0_88ae14aaa22937a1a28d4776cf82fd7277d1764d\classes.dex" />
+        <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.3.0_e503d251b7025a12e61116f56211622e8a878a30/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/gcdpinho/Git/AppSaude/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="019d87372a267b0d899dd106c61f898b0fc12216">
+        <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0401a9f8a09873d91ab0312d0284c52f42036011/classes.dex" />
     </item>
 
 </items>

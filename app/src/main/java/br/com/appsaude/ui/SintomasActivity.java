@@ -127,13 +127,19 @@ public class SintomasActivity extends BackableActivity {
         diag.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 EditText t1 = (EditText) findViewById(R.id.editText1);
-                EditText t2 = (EditText) findViewById(R.id.editText3);
-                EditText t3 = (EditText) findViewById(R.id.editText4);
+                EditText t2 = (EditText) findViewById(R.id.editText2);
+                EditText t3 = (EditText) findViewById(R.id.editText3);
+                EditText t4 = (EditText) findViewById(R.id.editText4);
+                EditText t5 = (EditText) findViewById(R.id.editText5);
+                EditText t6 = (EditText) findViewById(R.id.editText6);
 
                 ArrayList<String> campos = new ArrayList<>();
                 campos.add(new String(t1.getText().toString()));
                 campos.add(new String(t2.getText().toString()));
                 campos.add(new String(t3.getText().toString()));
+                campos.add(new String(t4.getText().toString()));
+                campos.add(new String(t5.getText().toString()));
+                campos.add(new String(t6.getText().toString()));
 
                 postDignosticos(campos);
             }
