@@ -71,7 +71,6 @@ public class SintomasActivity extends BackableActivity {
                 buttonAdd();
             }
         });
-        
     }
 
     private void buttonAdd(){
