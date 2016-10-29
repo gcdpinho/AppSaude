@@ -80,10 +80,12 @@
 
         <Button
             android:id="@+id/button"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="128dp"
-            android:layout_height="35dp"
+            android:layout_height="30dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="12dp"
+            android:layout_gravity="center|end"
             android:background="@drawable/button_adicionar"
             android:text="@string/adicionar"
             android:textAllCaps="false"
