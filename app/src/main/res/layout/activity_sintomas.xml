@@ -43,72 +43,173 @@
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="15dp" />
 
-                <EditText
-                    android:id="@+id/editText1"
+                <LinearLayout
+                    android:id="@+id/linearEdit1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/campo_digite"
-                    android:hint="@string/exemplo"
-                    android:inputType="textPersonName"
-                    android:padding="8dp"
-                    android:textColorHint="@color/bordaCampo"
-                    android:textSize="18sp" />
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/editText2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/campo_digite"
-                    android:hint="@string/exemplo"
-                    android:inputType="textPersonName"
-                    android:padding="8dp"
-                    android:textColorHint="@color/bordaCampo" />
+                    <EditText
+                        android:id="@+id/editText1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:hint="@string/exemplo"
+                        android:inputType="textPersonName"
+                        android:padding="8dp"
+                        android:textColorHint="@color/bordaCampo"
+                        android:textSize="18sp" />
 
-                <EditText
-                    android:id="@+id/editText3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/campo_digite"
-                    android:hint="@string/exemplo"
-                    android:inputType="textPersonName"
-                    android:padding="8dp"
-                    android:textColorHint="@color/bordaCampo" />
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_exclude"
+                        android:tint="@color/colorPrimary" />
+                </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText4"
+                <LinearLayout
+                    android:id="@+id/linearEdit2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:background="@drawable/campo_digite"
-                    android:hint="@string/exemplo"
-                    android:inputType="textPersonName"
-                    android:padding="8dp"
-                    android:textColorHint="@color/bordaCampo" />
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/editText5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/campo_digite"
-                    android:hint="@string/exemplo"
-                    android:inputType="textPersonName"
-                    android:padding="8dp"
-                    android:textColorHint="@color/bordaCampo" />
+                    <EditText
+                        android:id="@+id/editText2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:hint="@string/exemplo"
+                        android:inputType="textPersonName"
+                        android:padding="8dp"
+                        android:textColorHint="@color/bordaCampo"
+                        android:textSize="18sp" />
 
-                <EditText
-                    android:id="@+id/editText6"
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_exclude"
+                        android:tint="@color/colorPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearEdit3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:background="@drawable/campo_digite"
-                    android:hint="@string/exemplo"
-                    android:inputType="textPersonName"
-                    android:padding="8dp"
-                    android:textColorHint="@color/bordaCampo" />
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editText3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:hint="@string/exemplo"
+                        android:inputType="textPersonName"
+                        android:padding="8dp"
+                        android:textColorHint="@color/bordaCampo"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_exclude"
+                        android:tint="@color/colorPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearEdit4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/campo_digite"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editText4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:hint="@string/exemplo"
+                        android:inputType="textPersonName"
+                        android:padding="8dp"
+                        android:textColorHint="@color/bordaCampo"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_exclude"
+                        android:tint="@color/colorPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearEdit5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/campo_digite"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editText5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:hint="@string/exemplo"
+                        android:inputType="textPersonName"
+                        android:padding="8dp"
+                        android:textColorHint="@color/bordaCampo"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_exclude"
+                        android:tint="@color/colorPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearEdit6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/campo_digite"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editText6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:hint="@string/exemplo"
+                        android:inputType="textPersonName"
+                        android:padding="8dp"
+                        android:textColorHint="@color/bordaCampo"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_exclude"
+                        android:tint="@color/colorPrimary" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/textView2"
