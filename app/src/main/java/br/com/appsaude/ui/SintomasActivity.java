@@ -45,8 +45,78 @@ public class SintomasActivity extends BackableActivity {
         designConfigurations();
 
         Diagnosticar();
+        teste();
 
         //callVolley();
+    }
+
+    private void teste(){
+        //EditText t1 = (EditText) findViewById(R.id.editText1);
+        //t1.setVisibility(View.GONE);
+        EditText t2 = (EditText) findViewById(R.id.editText2);
+        t2.setVisibility(View.GONE);
+        EditText t3 = (EditText) findViewById(R.id.editText3);
+        t3.setVisibility(View.GONE);
+        EditText t4 = (EditText) findViewById(R.id.editText4);
+        t4.setVisibility(View.GONE);
+        EditText t5 = (EditText) findViewById(R.id.editText5);
+        t5.setVisibility(View.GONE);
+        EditText t6 = (EditText) findViewById(R.id.editText6);
+        t6.setVisibility(View.GONE);
+
+        Button add = (Button) findViewById(R.id.button);
+
+        add.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                butADD();
+            }
+        });
+
+    }
+
+    private void butADD(){
+        boolean flag = false;
+        for (int i=2; i<=6; i++){
+            switch (i) {
+                case 2:
+                    EditText t2 = (EditText) findViewById(R.id.editText2);
+                    if (!t2.isShown()) {
+                        t2.setVisibility(View.VISIBLE);
+                        flag = true;
+                    }
+                    break;
+                case 3:
+                    EditText t3 = (EditText) findViewById(R.id.editText3);
+                    if (!t3.isShown()) {
+                        t3.setVisibility(View.VISIBLE);
+                        flag = true;
+                    }
+                    break;
+                case 4:
+                    EditText t4 = (EditText) findViewById(R.id.editText4);
+                    if (!t4.isShown()) {
+                        t4.setVisibility(View.VISIBLE);
+                        flag = true;
+                    }
+                    break;
+                case 5:
+                    EditText t5 = (EditText) findViewById(R.id.editText5);
+                    if (!t5.isShown()) {
+                        t5.setVisibility(View.VISIBLE);
+                        flag = true;
+                    }
+                    break;
+                case 6:
+                    EditText t6 = (EditText) findViewById(R.id.editText6);
+                    if (!t6.isShown()) {
+                        t6.setVisibility(View.VISIBLE);
+                        flag = true;
+                    }
+                    break;
+            }
+            if (flag)
+                break;
+        }
     }
 
     private void Diagnosticar(){

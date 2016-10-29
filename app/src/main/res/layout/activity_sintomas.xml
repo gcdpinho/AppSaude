@@ -55,7 +55,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editText3"
+                    android:id="@+id/editText2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -67,7 +67,40 @@
                     android:textColorHint="@color/bordaCampo" />
 
                 <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/campo_digite"
+                    android:hint="@string/exemplo"
+                    android:inputType="textPersonName"
+                    android:padding="8dp"
+                    android:textColorHint="@color/bordaCampo" />
+
+                <EditText
                     android:id="@+id/editText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/campo_digite"
+                    android:hint="@string/exemplo"
+                    android:inputType="textPersonName"
+                    android:padding="8dp"
+                    android:textColorHint="@color/bordaCampo" />
+
+                <EditText
+                    android:id="@+id/editText5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/campo_digite"
+                    android:hint="@string/exemplo"
+                    android:inputType="textPersonName"
+                    android:padding="8dp"
+                    android:textColorHint="@color/bordaCampo" />
+
+                <EditText
+                    android:id="@+id/editText6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
