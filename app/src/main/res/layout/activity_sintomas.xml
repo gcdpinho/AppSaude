@@ -3,94 +3,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="br.com.appsaude.ui.SintomasActivity"
-    android:weightSum="1"
     android:background="@color/white"
+    android:baselineAligned="false"
     android:orientation="vertical"
-    android:baselineAligned="false">
+    android:weightSum="1"
+    tools:context="br.com.appsaude.ui.SintomasActivity">
 
-    <TextView
-        android:text="@string/sintomas"
-        android:layout_width="356dp"
-        android:layout_height="56dp"
-        android:id="@+id/textView"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:layout_weight="0.07" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
 
-    <View style="@style/Divider"/>
 
-    <EditText
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:text="@string/sintomas"
+            android:textColor="@color/textColorGray"
+            android:textSize="18sp" />
+
+        <View
+            style="@style/Divider"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="15dp" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/campo_digite"
+            android:hint="@string/exemplo"
+            android:inputType="textPersonName"
+            android:padding="8dp"
+            android:textColorHint="@color/bordaCampo"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/campo_digite"
+            android:hint="@string/exemplo"
+            android:inputType="textPersonName"
+            android:padding="8dp"
+            android:textColorHint="@color/bordaCampo" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/campo_digite"
+            android:hint="@string/exemplo"
+            android:inputType="textPersonName"
+            android:padding="8dp"
+            android:textColorHint="@color/bordaCampo" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="@string/avisoLimite"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="128dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/button_adicionar"
+            android:text="@string/adicionar"
+            android:textAllCaps="false"
+            android:textColor="@color/textColorGray"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editText1"
-        android:textSize="18sp"
-        android:background="@drawable/campo_digite"
-        android:hint="@string/exemplo"
-        android:padding="8dp"
-        android:textColorHint="@color/bordaCampo"/>
+        android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:id="@+id/editText3"
-        android:background="@drawable/campo_digite"
-        android:hint="@string/exemplo"
-        android:padding="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:textColorHint="@color/bordaCampo"/>
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/button_diagnosticar"
+            android:text="@string/diagnosticar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:id="@+id/editText4"
-        android:background="@drawable/campo_digite"
-        android:hint="@string/exemplo"
-        android:padding="8dp"
-        android:layout_marginBottom="8dp"
-        android:textColorHint="@color/bordaCampo"/>
+        <View
+            style="@style/Divider"
+            android:layout_height="20dp" />
 
-    <TextView
-        android:text="@string/avisoLimite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:padding="2dp"
-        android:textSize="12dp"
-        android:textColor="@color/colorPrimary"
-        android:gravity="center" />
-
-    <Button
-        android:text="@string/adicionar"
-        android:layout_width="128dp"
-        android:layout_height="35dp"
-        android:background="@drawable/button_adicionar"
-        android:textAllCaps="false"
-        android:textSize="18dp"
-        android:id="@+id/button" />
-
-    <Button
-        android:text="@string/diagnosticar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:textSize="18dp"
-        android:background="@drawable/button_diagnosticar"
-        android:textColor="@color/white"
-        android:textAllCaps="false"
-
-        android:layout_weight="0.02" />
-
-    <View style="@style/Divider"
-        android:layout_height="20dp" />
+    </LinearLayout>
 
 </LinearLayout>
