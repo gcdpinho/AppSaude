@@ -1,4 +1,4 @@
-package br.com.appsaude;
+package br.com.appsaude.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import br.com.appsaude.R;
 import br.com.appsaude.ui.SintomasActivity;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;

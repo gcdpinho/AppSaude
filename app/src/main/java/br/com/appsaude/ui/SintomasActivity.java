@@ -3,6 +3,7 @@ package br.com.appsaude.ui;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -180,6 +181,7 @@ public class SintomasActivity extends BackableActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         TextView actionBar = (TextView) findViewById(R.id.actionBarId);
         actionBar.setText("Sinais e Sintomas");
+        actionBar.setTextColor(Color.parseColor("#FFFFFF"));
     }
 
 
