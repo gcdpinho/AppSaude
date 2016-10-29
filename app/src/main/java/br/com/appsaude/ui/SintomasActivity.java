@@ -45,12 +45,11 @@ public class SintomasActivity extends BackableActivity {
         designConfigurations();
 
         Diagnosticar();
-        teste();
+        camposVisible();
 
-        //callVolley();
     }
 
-    private void teste(){
+    private void camposVisible(){
         //EditText t1 = (EditText) findViewById(R.id.editText1);
         //t1.setVisibility(View.GONE);
         EditText t2 = (EditText) findViewById(R.id.editText2);
@@ -68,13 +67,13 @@ public class SintomasActivity extends BackableActivity {
 
         add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                butADD();
+                buttonAdd();
             }
         });
 
     }
 
-    private void butADD(){
+    private void buttonAdd(){
         boolean flag = false;
         for (int i=2; i<=6; i++){
             switch (i) {

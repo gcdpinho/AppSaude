@@ -7,12 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="122367dc-0357-4fa5-8df4-cf7d46de92a0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AppSaude.iml" afterPath="$PROJECT_DIR$/AppSaude.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/appsaude/ui/SintomasActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/appsaude/ui/SintomasActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sintomas.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sintomas.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
     <ignored path="AppSaude.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +36,11 @@
       <file leaf-file-name="SintomasActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/appsaude/ui/SintomasActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+            <state relative-caret-position="410">
+              <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
               <folding>
-                <element signature="e#2159#2279#0" expanded="true" />
-                <element signature="e#2278#2279#0" expanded="true" />
+                <element signature="e#2151#2274#0" expanded="true" />
+                <element signature="e#2273#2274#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2264,11 +2259,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/appsaude/ui/SintomasActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+        <state relative-caret-position="410">
+          <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
           <folding>
-            <element signature="e#2159#2279#0" expanded="true" />
-            <element signature="e#2278#2279#0" expanded="true" />
+            <element signature="e#2151#2274#0" expanded="true" />
+            <element signature="e#2273#2274#0" expanded="true" />
           </folding>
         </state>
       </provider>
