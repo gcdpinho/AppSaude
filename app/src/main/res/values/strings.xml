@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">AppSaude</string>
+    <string name="app_name">Sinais e Sintomas</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="sintomas">Sintomas</string>
+    <string name="sintomas">O que você está sentindo?</string>
+    <string name="exemplo">Ex.: Dor de Cabeça.</string>
+    <string name="avisoLimite">Você pode adicionar no máximo 6 sinais e sintomas.</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="diagnosticar">Diagnóstico</string>
 </resources>
