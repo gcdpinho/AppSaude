@@ -6,113 +6,123 @@
     android:background="@color/white"
     android:baselineAligned="false"
     android:orientation="vertical"
-    android:weightSum="1"
     tools:context="br.com.appsaude.ui.SintomasActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="20dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin">
+        android:fillViewport="true">
 
-
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:gravity="center"
-            android:text="@string/sintomas"
-            android:textColor="@color/textColorGray"
-            android:textSize="18sp" />
+            android:layout_height="0dp"
+            android:orientation="vertical">
 
-        <View
-            style="@style/Divider"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="15dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin">
 
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/campo_digite"
-            android:hint="@string/exemplo"
-            android:inputType="textPersonName"
-            android:padding="8dp"
-            android:textColorHint="@color/bordaCampo"
-            android:textSize="18sp" />
 
-        <EditText
-            android:id="@+id/editText3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/campo_digite"
-            android:hint="@string/exemplo"
-            android:inputType="textPersonName"
-            android:padding="8dp"
-            android:textColorHint="@color/bordaCampo" />
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center"
+                    android:text="@string/sintomas"
+                    android:textColor="@color/textColorGray"
+                    android:textSize="18sp" />
 
-        <EditText
-            android:id="@+id/editText4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/campo_digite"
-            android:hint="@string/exemplo"
-            android:inputType="textPersonName"
-            android:padding="8dp"
-            android:textColorHint="@color/bordaCampo" />
+                <View
+                    style="@style/Divider"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="15dp" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="2dp"
-            android:text="@string/avisoLimite"
-            android:textColor="@color/colorPrimary"
-            android:textSize="12sp" />
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/campo_digite"
+                    android:hint="@string/exemplo"
+                    android:inputType="textPersonName"
+                    android:padding="8dp"
+                    android:textColorHint="@color/bordaCampo"
+                    android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/button"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="128dp"
-            android:layout_height="30dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="12dp"
-            android:layout_gravity="center|end"
-            android:background="@drawable/button_adicionar"
-            android:text="@string/adicionar"
-            android:textAllCaps="false"
-            android:textColor="@color/textColorGray"
-            android:textSize="18sp" />
-    </LinearLayout>
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/campo_digite"
+                    android:hint="@string/exemplo"
+                    android:inputType="textPersonName"
+                    android:padding="8dp"
+                    android:textColorHint="@color/bordaCampo" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+                <EditText
+                    android:id="@+id/editText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/campo_digite"
+                    android:hint="@string/exemplo"
+                    android:inputType="textPersonName"
+                    android:padding="8dp"
+                    android:textColorHint="@color/bordaCampo" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:background="@drawable/button_diagnosticar"
-            android:text="@string/diagnosticar"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="@string/avisoLimite"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp" />
 
-        <View
-            style="@style/Divider"
-            android:layout_height="20dp" />
+                <Button
+                    android:id="@+id/button"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="128dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center|end"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/button_adicionar"
+                    android:text="@string/adicionar"
+                    android:textAllCaps="false"
+                    android:textColor="@color/textColorGray"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/button_diagnosticar"
+                    android:text="@string/diagnosticar"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <View
+                    style="@style/Divider"
+                    android:layout_height="20dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
