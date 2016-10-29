@@ -50,8 +50,7 @@ public class SintomasActivity extends BackableActivity {
     }
 
     private void camposVisible(){
-        //EditText t1 = (EditText) findViewById(R.id.editText1);
-        //t1.setVisibility(View.GONE);
+       
         EditText t2 = (EditText) findViewById(R.id.editText2);
         t2.setVisibility(View.GONE);
         EditText t3 = (EditText) findViewById(R.id.editText3);
