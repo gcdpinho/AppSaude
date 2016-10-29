@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="br.com.appsaude.SintomasActivity"
+    tools:context="br.com.appsaude.ui.SintomasActivity"
     android:weightSum="1"
     android:background="@color/white"
     android:orientation="vertical"
@@ -40,22 +40,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:ems="10"
         android:id="@+id/editText3"
         android:background="@drawable/campo_digite"
         android:hint="@string/exemplo"
         android:padding="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:textColorHint="@color/bordaCampo"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:ems="10"
         android:id="@+id/editText4"
         android:background="@drawable/campo_digite"
         android:hint="@string/exemplo"
         android:padding="8dp"
+        android:layout_marginBottom="8dp"
         android:textColorHint="@color/bordaCampo"/>
 
     <TextView

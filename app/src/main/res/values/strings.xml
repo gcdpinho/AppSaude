@@ -3,6 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="sintomas">O que você está sentindo?</string>
+    <string name="menu_sintomas">Sintomas e Sinais</string>
     <string name="exemplo">Ex.: Dor de Cabeça.</string>
     <string name="avisoLimite">Você pode adicionar no máximo 6 sinais e sintomas.</string>
     <string name="adicionar">Adicionar</string>

@@ -1,4 +1,4 @@
-package br.com.appsaude;
+package br.com.appsaude.ui;
 
 import android.app.Application;
 import android.content.Context;
@@ -33,22 +33,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import br.com.appsaude.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
-public class SintomasActivity extends AppCompatActivity {
+public class SintomasActivity extends BackableActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sintomas);
-
         designConfigurations();
-
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/HINDGUNTUR-REGULAR.TTF")
-                .setFontAttrId(R.attr.fontPath)
-                .build()
-        );
 
         Diagnosticar();
 
@@ -114,10 +108,10 @@ public class SintomasActivity extends AppCompatActivity {
     private void designConfigurations() {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        //TODO: Verificar a necessidade de imagem para backbutton do menu
-        // ab.setCustomView(R.layour.actionbar_backbutton);
+        ab.setCustomView(R.layout.actionbar_backbutton);
         ab.setDisplayHomeAsUpEnabled(true);
-        // TextView actionBar = (TextView) findViewById(R.id.actionBarId)
+        TextView actionBar = (TextView) findViewById(R.id.actionBarId);
+        actionBar.setText("Sinais e Sintomas");
     }
 
 
