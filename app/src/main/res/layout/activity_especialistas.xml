@@ -8,4 +8,5 @@
     android:orientation="vertical"
     tools:context="br.com.appsaude.ui.EspecialistasActivity">
 
+
 </LinearLayout>
