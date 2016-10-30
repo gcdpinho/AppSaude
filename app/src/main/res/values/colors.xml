@@ -3,6 +3,11 @@
     <color name="colorPrimary">#d63c49</color>
     <color name="colorPrimaryDark">#bd2e3a</color>
     <color name="colorAccent">#d63c49</color>
+
+    <color name="colorPrimary1">#a2c56a</color>
+    <color name="colorPrimaryDark1">#7fa04a</color>
+    <color name="colorAccent1">#a2c56a</color>
+
     <color name="textColorGray">#717171</color>
     <color name="bordaCampo">#e3e4e6</color>
     <color name="backgroundCampo">#f7f7f7</color>

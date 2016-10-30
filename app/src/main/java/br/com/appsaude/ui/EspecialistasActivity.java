@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import br.com.appsaude.R;
 
-public class EspecialistasActivity extends AppCompatActivity {
+public class EspecialistasActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

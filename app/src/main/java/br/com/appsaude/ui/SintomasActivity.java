@@ -210,9 +210,17 @@ public class SintomasActivity extends BackableActivity {
                 campos.add(new String(t5.getText().toString()));
                 campos.add(new String(t6.getText().toString()));
 
-                postDignosticos(campos);
+                //postDignosticos(campos);
+                goEspecialistas();
+
             }
         });
+    }
+
+    public void goEspecialistas() {
+
+        Intent secondActivity = new Intent(this, EspecialistasActivity.class);
+        startActivity(secondActivity);
     }
 
     private void callVolley() {
@@ -321,7 +329,7 @@ public class SintomasActivity extends BackableActivity {
                             Toast.makeText(context, resposta, Toast.LENGTH_LONG).show();
                         }
 
-
+                        Toast.makeText(context, "Os campos não possuem valores válidos.", Toast.LENGTH_LONG).show();
 
                     }
                 },
