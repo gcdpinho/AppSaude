@@ -8,9 +8,11 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,17 +55,80 @@ public class SintomasActivity extends BackableActivity {
 
     private void camposVisible(){
 
-        EditText t2 = (EditText) findViewById(R.id.editText2);
+        LinearLayout t2 = (LinearLayout) findViewById(R.id.linearEdit2);
         t2.setVisibility(View.GONE);
-        EditText t3 = (EditText) findViewById(R.id.editText3);
+        LinearLayout t3 = (LinearLayout) findViewById(R.id.linearEdit3);
         t3.setVisibility(View.GONE);
-        EditText t4 = (EditText) findViewById(R.id.editText4);
+        LinearLayout t4 = (LinearLayout) findViewById(R.id.linearEdit4);
         t4.setVisibility(View.GONE);
-        EditText t5 = (EditText) findViewById(R.id.editText5);
+        LinearLayout t5 = (LinearLayout) findViewById(R.id.linearEdit5);
         t5.setVisibility(View.GONE);
-        EditText t6 = (EditText) findViewById(R.id.editText6);
+        LinearLayout t6 = (LinearLayout) findViewById(R.id.linearEdit6);
         t6.setVisibility(View.GONE);
 
+        TextView t = (TextView) findViewById(R.id.textView2);
+        t.setVisibility(View.GONE);
+
+        ImageView i2 = (ImageView) findViewById(R.id.close2);
+        i2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                LinearLayout t = (LinearLayout) findViewById(R.id.linearEdit2);
+                t.setVisibility(View.GONE);
+                Button b = (Button) findViewById(R.id.button);
+                b.setVisibility(View.VISIBLE);
+                TextView tv = (TextView) findViewById(R.id.textView2);
+                tv.setVisibility(View.GONE);
+            }
+        });
+
+        ImageView i3 = (ImageView) findViewById(R.id.close3);
+        i3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                LinearLayout t = (LinearLayout) findViewById(R.id.linearEdit3);
+                t.setVisibility(View.GONE);
+                Button b = (Button) findViewById(R.id.button);
+                b.setVisibility(View.VISIBLE);
+                TextView tv = (TextView) findViewById(R.id.textView2);
+                tv.setVisibility(View.GONE);
+            }
+        });
+
+        ImageView i4 = (ImageView) findViewById(R.id.close4);
+        i4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                LinearLayout t = (LinearLayout) findViewById(R.id.linearEdit4);
+                t.setVisibility(View.GONE);
+                Button b = (Button) findViewById(R.id.button);
+                b.setVisibility(View.VISIBLE);
+                TextView tv = (TextView) findViewById(R.id.textView2);
+                tv.setVisibility(View.GONE);
+            }
+        });
+
+        ImageView i5 = (ImageView) findViewById(R.id.close5);
+        i5.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                LinearLayout t = (LinearLayout) findViewById(R.id.linearEdit5);
+                t.setVisibility(View.GONE);
+                Button b = (Button) findViewById(R.id.button);
+                b.setVisibility(View.VISIBLE);
+                TextView tv = (TextView) findViewById(R.id.textView2);
+                tv.setVisibility(View.GONE);
+
+            }
+        });
+
+        ImageView i6 = (ImageView) findViewById(R.id.close6);
+        i6.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                LinearLayout t = (LinearLayout) findViewById(R.id.linearEdit6);
+                t.setVisibility(View.GONE);
+                Button b = (Button) findViewById(R.id.button);
+                b.setVisibility(View.VISIBLE);
+                TextView tv = (TextView) findViewById(R.id.textView2);
+                tv.setVisibility(View.GONE);
+            }
+        });
         Button add = (Button) findViewById(R.id.button);
 
         add.setOnClickListener(new View.OnClickListener() {
@@ -78,37 +143,41 @@ public class SintomasActivity extends BackableActivity {
         for (int i=2; i<=6; i++){
             switch (i) {
                 case 2:
-                    EditText t2 = (EditText) findViewById(R.id.editText2);
+                    LinearLayout t2 = (LinearLayout) findViewById(R.id.linearEdit2);
                     if (!t2.isShown()) {
                         t2.setVisibility(View.VISIBLE);
                         flag = true;
                     }
                     break;
                 case 3:
-                    EditText t3 = (EditText) findViewById(R.id.editText3);
+                    LinearLayout t3 = (LinearLayout) findViewById(R.id.linearEdit3);
                     if (!t3.isShown()) {
                         t3.setVisibility(View.VISIBLE);
                         flag = true;
                     }
                     break;
                 case 4:
-                    EditText t4 = (EditText) findViewById(R.id.editText4);
+                    LinearLayout t4 = (LinearLayout) findViewById(R.id.linearEdit4);
                     if (!t4.isShown()) {
                         t4.setVisibility(View.VISIBLE);
                         flag = true;
                     }
                     break;
                 case 5:
-                    EditText t5 = (EditText) findViewById(R.id.editText5);
+                    LinearLayout t5 = (LinearLayout) findViewById(R.id.linearEdit5);
                     if (!t5.isShown()) {
                         t5.setVisibility(View.VISIBLE);
                         flag = true;
                     }
                     break;
                 case 6:
-                    EditText t6 = (EditText) findViewById(R.id.editText6);
+                    LinearLayout t6 = (LinearLayout) findViewById(R.id.linearEdit6);
                     if (!t6.isShown()) {
                         t6.setVisibility(View.VISIBLE);
+                        Button b = (Button) findViewById(R.id.button);
+                        b.setVisibility(View.GONE);
+                        TextView t = (TextView) findViewById(R.id.textView2);
+                        t.setVisibility(View.VISIBLE);
                         flag = true;
                     }
                     break;
