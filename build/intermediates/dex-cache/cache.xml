@@ -106,7 +106,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="1d8c63eb154d903f6d89a9baae0d1e2a7b8f5a51">
+        sha1="1164ad34c7322ea334aa12817b7d6a33d96ad968">
         <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0401a9f8a09873d91ab0312d0284c52f42036011/classes.dex" />
     </item>
 

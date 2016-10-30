@@ -28,9 +28,7 @@
         <activity
             android:name=".ui.EspecialistasActivity"
             android:parentActivityName=".ui.EspecialistasActivity"
-            android:theme="@style/AppTheme1">
-
-        </activity>
+            android:theme="@style/AppTheme1" />
     </application>
 
 </manifest>

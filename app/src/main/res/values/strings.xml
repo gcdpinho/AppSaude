@@ -9,4 +9,5 @@
     <string name="adicionar">Adicionar</string>
     <string name="diagnosticar">Procurar Especialista</string>
     <string name="title_activity_especialistas">Especialistas</string>
+    <string name="especialistas">Estes são os especialistas indicados para o tratamento dos seus sintomas:</string>
 </resources>

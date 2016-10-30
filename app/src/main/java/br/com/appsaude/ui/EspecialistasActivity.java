@@ -4,7 +4,11 @@ import android.graphics.Color;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.appsaude.R;
 
@@ -15,6 +19,26 @@ public class EspecialistasActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_especialistas);
         designConfigurations();
+
+        ListView listView = (ListView)findViewById(R.id.listView);
+        List<Especialista> zombies = gerarZombies();
+
+        final EspecialistasAdapter zombiesAdapter = new EspecialistasAdapter(this,  zombies);
+        listView.setAdapter(zombiesAdapter);
+    }
+
+    private List<Especialista> gerarZombies() {
+        List<Especialista> zombies = new ArrayList<Especialista>();
+        zombies.add(criarZombie("Shane", 23, R.drawable.ic_exclude));
+        zombies.add(criarZombie("Hershel", 23, R.drawable.ic_exclude));
+        zombies.add(criarZombie("Glen", 23, R.drawable.ic_exclude));
+
+        return zombies;
+    }
+
+    private Especialista criarZombie(String nome, int idade, int image) {
+        Especialista especialista = new Especialista(nome, idade, image);
+        return especialista;
     }
 
     private void designConfigurations() {
