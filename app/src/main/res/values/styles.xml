@@ -38,4 +38,10 @@
         <item name="android:paddingTop">2dp</item>
     </style>
 
+    <style name="DividerGray">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/darkGray</item>
+        <item name="android:paddingTop">2dp</item>
+    </style>
 </resources>
