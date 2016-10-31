@@ -46,13 +46,13 @@ public class EspecialistasActivity extends BaseActivity {
 
         for (int i=0; i<splitLine.length; i++){
             String[] aux = splitLine[i].split(":");
-            espList.add(criarZombie(aux[0], aux[1], R.drawable.iconesetaverde));
+            espList.add(criarEsp(aux[0], aux[1], R.drawable.iconesetaverde));
         }
 
         return espList;
     }
 
-    private Especialista criarZombie(String nome, String percent, int image) {
+    private Especialista criarEsp(String nome, String percent, int image) {
         Especialista esp = new Especialista(nome, percent, image);
         return esp;
     }
