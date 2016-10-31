@@ -1,16 +1,21 @@
 package br.com.appsaude.ui;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.appsaude.R;
+
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
 
 public class EspecialistasActivity extends BaseActivity {
 
@@ -20,25 +25,34 @@ public class EspecialistasActivity extends BaseActivity {
         setContentView(R.layout.activity_especialistas);
         designConfigurations();
 
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(EXTRA_MESSAGE);
+
+        //Context context = getApplicationContext();
+        //Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+
         ListView listView = (ListView)findViewById(R.id.listView);
-        List<Especialista> zombies = gerarZombies();
+        List<Especialista> esp = gerarLista(message);
 
-        final EspecialistasAdapter zombiesAdapter = new EspecialistasAdapter(this,  zombies);
-        listView.setAdapter(zombiesAdapter);
+        final EspecialistasAdapter espAdapter = new EspecialistasAdapter(this, esp);
+        listView.setAdapter(espAdapter);
     }
 
-    private List<Especialista> gerarZombies() {
-        List<Especialista> zombies = new ArrayList<Especialista>();
-        zombies.add(criarZombie("Shane", 23, R.drawable.ic_exclude));
-        zombies.add(criarZombie("Hershel", 23, R.drawable.ic_exclude));
-        zombies.add(criarZombie("Glen", 23, R.drawable.ic_exclude));
+    private List<Especialista> gerarLista(String message) {
+        List<Especialista> espList = new ArrayList<>();
+        String[] splitLine = message.split("\n");
 
-        return zombies;
+        for (int i=0; i<splitLine.length; i++){
+            String[] aux = splitLine[i].split(":");
+            espList.add(criarZombie(aux[0], aux[1], R.drawable.ic_exclude));
+        }
+
+        return espList;
     }
 
-    private Especialista criarZombie(String nome, int idade, int image) {
-        Especialista especialista = new Especialista(nome, idade, image);
-        return especialista;
+    private Especialista criarZombie(String nome, String percent, int image) {
+        Especialista esp = new Especialista(nome, percent, image);
+        return esp;
     }
 
     private void designConfigurations() {

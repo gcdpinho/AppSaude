@@ -27,8 +27,11 @@
             android:windowSoftInputMode="stateUnchanged" />
         <activity
             android:name=".ui.EspecialistasActivity"
-            android:parentActivityName=".ui.EspecialistasActivity"
-            android:theme="@style/AppTheme1" />
+            android:parentActivityName=".ui.SintomasActivity"
+            android:theme="@style/AppTheme1"/>
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".ui.SintomasActivity" />
     </application>
 
 </manifest>

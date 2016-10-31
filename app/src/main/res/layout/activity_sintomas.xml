@@ -62,7 +62,6 @@
                         android:padding="8dp"
                         android:textColorHint="@color/bordaCampo"
                         android:textSize="18sp" />
-                    />
                 </LinearLayout>
 
                 <LinearLayout

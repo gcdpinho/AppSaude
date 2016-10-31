@@ -16,21 +16,21 @@ import br.com.appsaude.R;
 public class EspecialistasAdapter extends ArrayAdapter<Especialista> {
 
     private Context context;
-    private List<Especialista> zombies = null;
+    private List<Especialista> esp;
 
-    public EspecialistasAdapter(Context context, List<Especialista> zombies) {
-        super(context,0, zombies);
-        this.zombies = zombies;
+    public EspecialistasAdapter(Context context, List<Especialista> esp) {
+        super(context,0, esp);
+        this.esp = esp;
         this.context = context;
     }
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
-        Especialista especialista = zombies.get(position);
+        Especialista especialista = esp.get(position);
 
         if(view == null)
             view = LayoutInflater.from(context).inflate(R.layout.item_list_zombies, null);
-
+        /*
         ImageView imageViewZombie = (ImageView) view.findViewById(R.id.image_view_zombie);
         imageViewZombie.setImageResource(especialista.getImagem());
         imageViewZombie.setOnClickListener(new View.OnClickListener() {
@@ -38,14 +38,16 @@ public class EspecialistasAdapter extends ArrayAdapter<Especialista> {
                 Toast.makeText(context, "hi", Toast.LENGTH_LONG).show();
             }
         });
-
+        */
         TextView textViewNomeZombie = (TextView) view.findViewById(R.id.text_view_nome_zombie);
         textViewNomeZombie.setText(especialista.getNome());
 
 
-        TextView textViewIdade = (TextView)view.findViewById(R.id.text_view_idade_zombie);
-        String textoIdade = String.valueOf(especialista.getPercent()) + " " + "";
-        textViewIdade.setText(textoIdade);
+        TextView textViewIdade = (TextView)view.findViewById(R.id.text_view_Percent);
+        textViewIdade.setText(especialista.getPercent());
+
+        ImageView imageViewZombie1 = (ImageView) view.findViewById(R.id.image_view_zombie1);
+        imageViewZombie1.setImageResource(especialista.getImagem());
 
         return view;
     }

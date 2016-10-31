@@ -28,7 +28,11 @@ import java.util.ArrayList;
 
 import br.com.appsaude.R;
 
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
+
 public class SintomasActivity extends BackableActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,9 +182,6 @@ public class SintomasActivity extends BackableActivity {
     private void Diagnosticar(){
         Button diag = (Button) findViewById(R.id.button2);
 
-        //final Context context = getApplicationContext();
-        //Toast.makeText(context, teste, Toast.LENGTH_LONG).show();
-
         diag.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 EditText t1 = (EditText) findViewById(R.id.editText1);
@@ -198,16 +199,16 @@ public class SintomasActivity extends BackableActivity {
                 campos.add(new String(t5.getText().toString()));
                 campos.add(new String(t6.getText().toString()));
 
-                //postDignosticos(campos);
-                goEspecialistas();
+                postDignosticos(campos);
 
             }
         });
     }
 
-    public void goEspecialistas() {
+    public void goEspecialistas(String resposta) {
 
         Intent secondActivity = new Intent(this, EspecialistasActivity.class);
+        secondActivity.putExtra(EXTRA_MESSAGE, resposta);
         startActivity(secondActivity);
     }
 
@@ -314,10 +315,11 @@ public class SintomasActivity extends BackableActivity {
                                 maiorPai.add(index);
                                 resposta += espDiff.get(index) + ": " + maior + "%\n";
                             }
-                            Toast.makeText(context, resposta, Toast.LENGTH_LONG).show();
+                            //Toast.makeText(context, resposta, Toast.LENGTH_LONG).show();
+                            goEspecialistas(resposta);
                         }
-
-                        Toast.makeText(context, "Os campos não possuem valores válidos.", Toast.LENGTH_LONG).show();
+                        else
+                            Toast.makeText(context, "Os campos não possuem valores válidos.", Toast.LENGTH_SHORT).show();
 
                     }
                 },

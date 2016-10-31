@@ -3,10 +3,10 @@ package br.com.appsaude.ui;
 public class Especialista{
 
     private String nome;
-    private float percent;
+    private String percent;
     private int imagem;
 
-    public Especialista(String nome, float percent, int imagem){
+    public Especialista(String nome, String percent, int imagem){
         super();
         this.nome = nome;
         this.percent = percent;
@@ -21,11 +21,11 @@ public class Especialista{
         this.nome = nome;
     }
 
-    public float getPercent(){
+    public String getPercent(){
         return percent;
     }
 
-    public void setPercent(float percent){
+    public void setPercent(String percent){
         this.percent = percent;
     }
 
