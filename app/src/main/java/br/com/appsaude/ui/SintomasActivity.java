@@ -298,14 +298,14 @@ public class SintomasActivity extends BackableActivity {
                                     if (espDiff.get(j).equals(esp.get(i)))
                                         counts[j]++;
 
-                            float[] percents = new float[counts.length];
+                            int[] percents = new int[counts.length];
                             for (int i = 0; i < percents.length; i++)
                                 percents[i] = counts[i] * 100 * 2 / esp.size();
 
                             String resposta = "";
                             ArrayList<Integer> maiorPai = new ArrayList<>();
                             for (int j = 0; j < percents.length; j++) {
-                                float maior = 0;
+                                int maior = 0;
                                 int index = 0;
                                 for (int i = 0; i < percents.length; i++)
                                     if (!maiorPai.contains(i) && maior < percents[i]) {
