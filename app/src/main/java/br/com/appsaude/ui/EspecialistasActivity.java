@@ -19,10 +19,10 @@ import br.com.appsaude.R;
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 
-public class EspecialistasActivity extends BaseActivity {
+public class EspecialistasActivity extends BaseActivity{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_especialistas);
         designConfigurations();
@@ -40,7 +40,7 @@ public class EspecialistasActivity extends BaseActivity {
         listView.setAdapter(espAdapter);
     }
 
-    private List<Especialista> gerarLista(String message) {
+    private List<Especialista> gerarLista(String message){
         List<Especialista> espList = new ArrayList<>();
         String[] splitLine = message.split("\n");
 
@@ -52,12 +52,12 @@ public class EspecialistasActivity extends BaseActivity {
         return espList;
     }
 
-    private Especialista criarEsp(String nome, String percent, int image) {
+    private Especialista criarEsp(String nome, String percent, int image){
         Especialista esp = new Especialista(nome, percent, image);
         return esp;
     }
 
-    private void designConfigurations() {
+    private void designConfigurations(){
         ActionBar ab = getSupportActionBar();
         ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         ab.setCustomView(R.layout.actionbar_backbutton);
