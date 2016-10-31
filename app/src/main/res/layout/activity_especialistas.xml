@@ -40,7 +40,7 @@
 
                 <View
                     style="@style/Divider1"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginTop="15dp" />
 
                 <ListView
