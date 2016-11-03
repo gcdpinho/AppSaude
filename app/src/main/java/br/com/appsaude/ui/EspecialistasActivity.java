@@ -21,14 +21,17 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class EspecialistasActivity extends BaseActivity{
 
+    private String message;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_especialistas);
         designConfigurations();
 
+
         Intent intent = getIntent();
-        String message = intent.getStringExtra(EXTRA_MESSAGE);
+        message = intent.getStringExtra(EXTRA_MESSAGE);
 
         //Context context = getApplicationContext();
         //Toast.makeText(context, message, Toast.LENGTH_LONG).show();

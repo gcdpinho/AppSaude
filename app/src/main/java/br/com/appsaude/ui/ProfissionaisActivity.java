@@ -11,7 +11,7 @@ import br.com.appsaude.R;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
-public class ProfissionaisActivity extends BaseActivity {
+public class ProfissionaisActivity extends BackableActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

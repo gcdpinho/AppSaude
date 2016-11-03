@@ -70,6 +70,8 @@ public class SintomasActivity extends BackableActivity {
                 b.setVisibility(View.VISIBLE);
                 TextView tv = (TextView) findViewById(R.id.textView2);
                 tv.setVisibility(View.GONE);
+                TextView et = (TextView) findViewById(R.id.editText2);
+                et.setText("");
             }
         });
 
@@ -82,6 +84,8 @@ public class SintomasActivity extends BackableActivity {
                 b.setVisibility(View.VISIBLE);
                 TextView tv = (TextView) findViewById(R.id.textView2);
                 tv.setVisibility(View.GONE);
+                TextView et = (TextView) findViewById(R.id.editText3);
+                et.setText("");
             }
         });
 
@@ -94,6 +98,8 @@ public class SintomasActivity extends BackableActivity {
                 b.setVisibility(View.VISIBLE);
                 TextView tv = (TextView) findViewById(R.id.textView2);
                 tv.setVisibility(View.GONE);
+                TextView et = (TextView) findViewById(R.id.editText4);
+                et.setText("");
             }
         });
 
@@ -106,7 +112,8 @@ public class SintomasActivity extends BackableActivity {
                 b.setVisibility(View.VISIBLE);
                 TextView tv = (TextView) findViewById(R.id.textView2);
                 tv.setVisibility(View.GONE);
-
+                TextView et = (TextView) findViewById(R.id.editText5);
+                et.setText("");
             }
         });
 
@@ -119,6 +126,8 @@ public class SintomasActivity extends BackableActivity {
                 b.setVisibility(View.VISIBLE);
                 TextView tv = (TextView) findViewById(R.id.textView2);
                 tv.setVisibility(View.GONE);
+                TextView et = (TextView) findViewById(R.id.editText6);
+                et.setText("");
             }
         });
         Button add = (Button) findViewById(R.id.button);

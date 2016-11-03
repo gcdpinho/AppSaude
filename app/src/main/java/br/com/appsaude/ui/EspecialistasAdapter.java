@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -41,7 +42,9 @@ public class EspecialistasAdapter extends ArrayAdapter<Especialista>{
 
         ImageView imageViewProx = (ImageView) view.findViewById(R.id.imageViewProx);
         imageViewProx.setImageResource(especialista.getImagem());
-        imageViewProx.setOnClickListener(new View.OnClickListener() {
+
+        LinearLayout linearItem = (LinearLayout) view.findViewById(R.id.linearItem);
+        linearItem.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 goEspecialistas(especialista.getNome());
             }
