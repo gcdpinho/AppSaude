@@ -217,7 +217,7 @@ public class SintomasActivity extends BackableActivity {
         final Context context = getApplicationContext();
 // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://appsaude.pe.hu/android/teste.php";
+        String url = "http://web-saude.com/websaude/teste.php";
 
 // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -261,7 +261,7 @@ public class SintomasActivity extends BackableActivity {
     private void postDignosticos(ArrayList<String> campos) {
         final Context context = getApplicationContext();
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://appsaude.pe.hu/android/teste2.php?";
+        String url = "http://web-saude.com/websaude/getEspecialistas.php?";
 
         for (int i=0; i<campos.size(); i++)
             url += "campo"+ i + "=" + campos.get(i) + "&";
@@ -275,12 +275,16 @@ public class SintomasActivity extends BackableActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         String[] splitSinais = response.toString().split(",");
+                        String numDoencas = "";
                         ArrayList<String> esp = new ArrayList<>();
                         for (int i=0; i<splitSinais.length; i++){
+                            String[] splitPoints = splitSinais[i].split(":");
                             if (splitSinais[i].contains("nome")){
-                                String[] splitPoints = splitSinais[i].split(":");
                                 esp.add(splitPoints[splitPoints.length-1].replaceAll("[\":}]", "").replaceAll("]", ""));
                             }
+                            else
+                                if (splitSinais[i].contains("Doenca"))
+                                    numDoencas = splitPoints[splitPoints.length-1].replaceAll("[\":}]", "").replaceAll("]", "");
                         }
 
                         if (!esp.isEmpty()) {
@@ -300,7 +304,7 @@ public class SintomasActivity extends BackableActivity {
 
                             int[] percents = new int[counts.length];
                             for (int i = 0; i < percents.length; i++)
-                                percents[i] = counts[i] * 100 * 2 / esp.size();
+                                percents[i] = counts[i] * 100/ Integer.parseInt(numDoencas);
 
                             String resposta = "";
                             ArrayList<Integer> maiorPai = new ArrayList<>();
