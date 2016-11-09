@@ -16,4 +16,6 @@
     <color name="black">#000000</color>
     <color name="darkGray">#282828</color>
     <color name="btnMainBlue">#1c93a1</color>
+
+    <color name="coloPrimaryDark2">#b5b6bb</color>
 </resources>

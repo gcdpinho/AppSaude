@@ -79,7 +79,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="f6c0d617335f9c9c7fe3966d2080f8503679ff8e">
+        sha1="1696da774fbd3e8d3c41811013c860a1c2cfa65e">
         <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_cf1db6c5b5f19d3919637bb20dfa7e6d9ead91cb/classes.dex" />
     </item>
     <item
@@ -106,7 +106,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="c0e986e1c08e87f4748e14c6f38a6cf7dcf7f775">
+        sha1="f9cdff7260df73a2ef8c672b82d0fe667ac417da">
         <dex dex="/home/gcdpinho/Git/AppSaude/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0401a9f8a09873d91ab0312d0284c52f42036011/classes.dex" />
     </item>
 
