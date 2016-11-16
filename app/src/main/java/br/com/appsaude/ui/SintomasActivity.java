@@ -40,7 +40,7 @@ public class SintomasActivity extends BackableActivity {
         setContentView(R.layout.activity_sintomas);
         designConfigurations();
 
-        Diagnosticar();
+        buttonProximo();
         camposVisible();
 
     }
@@ -188,11 +188,13 @@ public class SintomasActivity extends BackableActivity {
         }
     }
 
-    private void Diagnosticar(){
+    private void buttonProximo(){
         Button diag = (Button) findViewById(R.id.button2);
 
         diag.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                boolean flag = false;
+                Context context = getApplicationContext();
                 EditText t1 = (EditText) findViewById(R.id.editText1);
                 EditText t2 = (EditText) findViewById(R.id.editText2);
                 EditText t3 = (EditText) findViewById(R.id.editText3);
@@ -208,51 +210,24 @@ public class SintomasActivity extends BackableActivity {
                 campos.add(new String(t5.getText().toString()));
                 campos.add(new String(t6.getText().toString()));
 
-                postDignosticos(campos);
-
+                for (int i=0; i<6; i++)
+                    if (!campos.get(i).equals("")) {
+                        flag = true;
+                        break;
+                    }
+                if (flag)
+                    volleySintomas(campos);
+                else
+                    startSinais("");
             }
         });
     }
 
-    public void goEspecialistas(String resposta) {
+    public void startSinais(String resposta) {
 
-        Intent secondActivity = new Intent(this, EspecialistasActivity.class);
+        Intent secondActivity = new Intent(this, SinaisActivity.class);
         secondActivity.putExtra(EXTRA_MESSAGE, resposta);
         startActivity(secondActivity);
-    }
-
-    private void callVolley() {
-        final TextView mTextView = (TextView) findViewById(R.id.text);
-        final Context context = getApplicationContext();
-// Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://web-saude.com/websaude/teste.php";
-
-// Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
-                        String output = "";
-                        try {
-                            output = new String(response.getBytes("ISO-8859-1"), "UTF-8");
-
-                        } catch (UnsupportedEncodingException e) {
-                            e.printStackTrace();
-                        }
-
-                        Toast.makeText(context, output, Toast.LENGTH_LONG).show();
-                    //    mTextView.setText("Response is: " + response.substring(0, 300));
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(context, "Erro na requisão do banco.", Toast.LENGTH_LONG).show();
-            }
-        });
-// Add the request to the RequestQueue.
-        queue.add(stringRequest);
     }
 
     private void designConfigurations() {
@@ -261,16 +236,15 @@ public class SintomasActivity extends BackableActivity {
         ab.setCustomView(R.layout.actionbar_backbutton);
         ab.setDisplayHomeAsUpEnabled(true);
         TextView actionBar = (TextView) findViewById(R.id.actionBarId);
-        actionBar.setText("Sinais e Sintomas");
+        actionBar.setText("SINTOMAS");
         actionBar.setTextColor(Color.parseColor("#FFFFFF"));
     }
 
 
-
-    private void postDignosticos(ArrayList<String> campos) {
+    private void volleySintomas(ArrayList<String> campos) {
         final Context context = getApplicationContext();
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://web-saude.com/websaude/getEspecialistas.php?";
+        String url = "http://web-saude.com/websaude/getSintomas.php?";
 
         for (int i=0; i<campos.size(); i++)
             url += "campo"+ i + "=" + campos.get(i) + "&";
@@ -286,14 +260,12 @@ public class SintomasActivity extends BackableActivity {
                         String[] splitSinais = response.toString().split(",");
                         String numDoencas = "";
                         ArrayList<String> esp = new ArrayList<>();
-                        for (int i=0; i<splitSinais.length; i++){
+                        for (int i = 0; i < splitSinais.length; i++) {
                             String[] splitPoints = splitSinais[i].split(":");
-                            if (splitSinais[i].contains("nome")){
-                                esp.add(splitPoints[splitPoints.length-1].replaceAll("[\":}]", "").replaceAll("]", ""));
-                            }
-                            else
-                                if (splitSinais[i].contains("Doenca"))
-                                    numDoencas = splitPoints[splitPoints.length-1].replaceAll("[\":}]", "").replaceAll("]", "");
+                            if (splitSinais[i].contains("nome")) {
+                                esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
+                            } else if (splitSinais[i].contains("Doenca"))
+                                numDoencas = splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", "");
                         }
 
                         if (!esp.isEmpty()) {
@@ -313,7 +285,7 @@ public class SintomasActivity extends BackableActivity {
 
                             int[] percents = new int[counts.length];
                             for (int i = 0; i < percents.length; i++)
-                                percents[i] = counts[i] * 100/ Integer.parseInt(numDoencas);
+                                percents[i] = counts[i] * 100 / Integer.parseInt(numDoencas);
 
                             String resposta = "";
                             ArrayList<Integer> maiorPai = new ArrayList<>();
@@ -329,12 +301,12 @@ public class SintomasActivity extends BackableActivity {
                                 resposta += espDiff.get(index) + ": " + maior + "%\n";
                             }
                             //Toast.makeText(context, resposta, Toast.LENGTH_LONG).show();
-                            goEspecialistas(resposta);
+                            startSinais(resposta);
                         }
                         else
                             Toast.makeText(context, "Os campos não possuem valores válidos.", Toast.LENGTH_SHORT).show();
-
                     }
+
                 },
                 new Response.ErrorListener() {
                     @Override

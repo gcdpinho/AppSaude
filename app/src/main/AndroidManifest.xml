@@ -23,7 +23,6 @@
         </activity>
         <activity
             android:name=".ui.SintomasActivity"
-            android:label="@string/app_name"
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateUnchanged" />
@@ -36,8 +35,20 @@
             android:name=".ui.ProfissionaisActivity"
             android:parentActivityName=".ui.EspecialistasActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme1">
-        </activity>
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".ui.ExamesComplementaresActivity"
+            android:parentActivityName=".ui.SinaisActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateUnchanged" />
+        <activity
+            android:name=".ui.SinaisActivity"
+            android:parentActivityName=".ui.SintomasActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateUnchanged" />
+        <activity android:name=".ui.DoencasActivity"></activity>
     </application>
 
 </manifest>

@@ -2,12 +2,18 @@
     <string name="app_name">Web Saúde</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="sintomas">O que você está sentindo?</string>
+    <string name="sintomas">O que o paciente está sentindo?</string>
+    <string name="sinais">O que você consegue observar?</string>
+    <string name="exames_complementares">Há algo mais para adicionar?</string>
+    <string name="button_sinais_sintomas">PRÓXIMO</string>
+    <string name="button_exames">DIAGNÓSTICO</string>
     <string name="menu_sintomas">Sintomas e Sinais</string>
     <string name="exemplo">Ex.: Dor de Cabeça.</string>
-    <string name="avisoLimite">Você pode adicionar no máximo 6 sinais e sintomas.</string>
+    <string name="sintomasLimite">Você pode adicionar no máximo 6 sintomas.</string>
+    <string name="sinaisLimite">Você pode adicionar no máximo 6 sinais.</string>
+    <string name="examesLimite">Você pode adicionar no máximo 6 exames complementares.</string>
     <string name="adicionar">Adicionar</string>
-    <string name="diagnosticar">Procurar Especialista</string>
+    <string name="diagnosticar">Exames Complementares</string>
     <string name="title_activity_especialistas">Especialistas</string>
     <string name="especialistas">Estes são os especialistas indicados para o tratamento dos seus sintomas:</string>
     <string name="conectar_ao_app">Conectar ao APP</string>
@@ -17,4 +23,5 @@
     <string name="tip_three"><b>Dica 3:</b> Antes de começar, confira nossas dicas para melhorar sua experiência.</string>
     <string name="already_connect">Já estou conectado</string>
     <string name="profissionais">Estes são os profissionais especializados encontrados próximos a você:</string>
+    <string name="exames">Diagnóstico</string>
 </resources>
