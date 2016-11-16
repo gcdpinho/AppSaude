@@ -48,7 +48,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateUnchanged" />
-        <activity android:name=".ui.DoencasActivity"></activity>
+        <activity
+            android:name=".ui.DoencasActivity"
+            android:parentActivityName=".ui.ExamesComplementaresActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme3"/>
     </application>
 
 </manifest>

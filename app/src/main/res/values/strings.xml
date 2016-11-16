@@ -23,5 +23,5 @@
     <string name="tip_three"><b>Dica 3:</b> Antes de começar, confira nossas dicas para melhorar sua experiência.</string>
     <string name="already_connect">Já estou conectado</string>
     <string name="profissionais">Estes são os profissionais especializados encontrados próximos a você:</string>
-    <string name="exames">Diagnóstico</string>
+    <string name="exames">Estes foram os resultados encontrados:</string>
 </resources>
