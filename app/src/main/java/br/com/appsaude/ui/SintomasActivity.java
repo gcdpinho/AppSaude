@@ -264,7 +264,7 @@ public class SintomasActivity extends BackableActivity {
                             String[] splitPoints = splitSinais[i].split(":");
                             if (splitSinais[i].contains("nome")) {
                                 esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
-                            } else if (splitSinais[i].contains("Doenca"))
+                            } else if (splitSinais[i].contains("Founds"))
                                 numDoencas = splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", "");
                         }
 

@@ -268,7 +268,7 @@ public class SinaisActivity extends BackableActivity {
                                 esp.add(splitPoints[splitPoints.length-1].replaceAll("[\":}]", "").replaceAll("]", ""));
                             }
                             else
-                            if (splitSinais[i].contains("Doenca"))
+                            if (splitSinais[i].contains("Found"))
                                 numDoencas = splitPoints[splitPoints.length-1].replaceAll("[\":}]", "").replaceAll("]", "");
                         }
 
