@@ -258,16 +258,17 @@ public class SintomasActivity extends BackableActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         String[] splitSinais = response.toString().split(",");
-                        String numDoencas = "";
+                        //String numDoencas = "";
                         ArrayList<String> esp = new ArrayList<>();
                         for (int i = 0; i < splitSinais.length; i++) {
                             String[] splitPoints = splitSinais[i].split(":");
-                            if (splitSinais[i].contains("nome")) {
+                            if (splitSinais[i].contains("nome"))
                                 esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
-                            } else if (splitSinais[i].contains("Founds"))
-                                numDoencas = splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", "");
+                            else
+                                if (splitSinais[i].contains("desc"))
+                                    esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
                         }
-
+                        /*
                         if (!esp.isEmpty()) {
                             ArrayList<String> espDiff = new ArrayList<>();
                             espDiff.add(esp.get(0));
@@ -302,9 +303,19 @@ public class SintomasActivity extends BackableActivity {
                             }
                             //Toast.makeText(context, resposta, Toast.LENGTH_LONG).show();
                             startSinais(resposta);
+
                         }
                         else
                             Toast.makeText(context, "Os campos não possuem valores válidos.", Toast.LENGTH_SHORT).show();
+                            */
+                        if (esp.isEmpty())
+                            Toast.makeText(context, "Os campos não possuem valores válidos.", Toast.LENGTH_SHORT).show();
+                        else {
+                            String resposta = "";
+                            for (int i = 0; i < esp.size(); i++)
+                                resposta += esp.get(i) + "\n";
+                            startSinais(resposta);
+                        }
                     }
 
                 },

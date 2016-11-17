@@ -27,5 +27,4 @@ dependencies {
     compile 'com.android.support:design:23.3.0'
     compile 'com.android.volley:volley:1.0.0'
     compile 'uk.co.chrisjenx:calligraphy:2.2.0'
-    compile 'com.github.bluejamesbond:textjustify-android:2.1.6'
 }

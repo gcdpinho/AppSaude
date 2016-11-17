@@ -2,6 +2,7 @@ package br.com.appsaude.ui;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.com.appsaude.R;
+import br.com.appsaude.TextViewEx;
 
 public class DoencasAdapter extends ArrayAdapter<Doenca>{
 
@@ -42,9 +44,10 @@ public class DoencasAdapter extends ArrayAdapter<Doenca>{
         TextView textViewPercent = (TextView)view.findViewById(R.id.textViewPorc);
         textViewPercent.setText(doencas.getPorc());
 
-        TextView textViewDesc = (TextView)view.findViewById(R.id.textViewDesc);
+        TextViewEx textViewDesc = (TextViewEx)view.findViewById(R.id.textViewDesc);
         //textViewDesc.loadData(doencas.getDescDoenca(), "text/html", "utf-8");
-        textViewDesc.setText(doencas.getDescDoenca());
+        //CharSequence teste = Html.fromHtml();buscando textview p
+        textViewDesc.setText(doencas.getDescDoenca(), true);
         textViewDesc.setLineSpacing(-16, 1);
 
         return view;

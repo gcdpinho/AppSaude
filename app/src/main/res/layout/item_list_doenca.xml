@@ -47,11 +47,11 @@
 
         </LinearLayout>
 
-        <TextView
-                android:id="@+id/textViewDesc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="13sp"
-                android:paddingBottom="10dp"/>
+
+        <br.com.appsaude.TextViewEx
+            android:id="@+id/textViewDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             />
         </LinearLayout>
 </LinearLayout>

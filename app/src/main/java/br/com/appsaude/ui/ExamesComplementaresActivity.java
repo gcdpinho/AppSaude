@@ -32,7 +32,7 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 
 public class ExamesComplementaresActivity extends BackableActivity {
-
+    private String message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,16 +40,12 @@ public class ExamesComplementaresActivity extends BackableActivity {
         setContentView(R.layout.activity_exames_complementares);
         designConfigurations();
 
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(EXTRA_MESSAGE);
-
-        Context context = getApplicationContext();
-        //Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-
         buttonDiagnostico();
         camposVisible();
 
-
+        message = getIntent().getStringExtra(EXTRA_MESSAGE);
+        //final Context context = getApplicationContext();
+        //Toast.makeText(context, message, Toast.LENGTH_LONG).show();
     }
 
     private void camposVisible(){
@@ -225,7 +221,7 @@ public class ExamesComplementaresActivity extends BackableActivity {
                 if (flag)
                     volleyExames(campos);
                 else
-                    startDoencas("");
+                    startDoencas(message);
 
             }
         });
@@ -266,16 +262,17 @@ public class ExamesComplementaresActivity extends BackableActivity {
                         @Override
                         public void onResponse(JSONObject response) {
                             String[] splitSinais = response.toString().split(",");
-                            String numDoencas = "";
+                            //String numDoencas = "";
                             ArrayList<String> esp = new ArrayList<>();
                             for (int i = 0; i < splitSinais.length; i++) {
                                 String[] splitPoints = splitSinais[i].split(":");
-                                if (splitSinais[i].contains("nome")) {
+                                if (splitSinais[i].contains("nome"))
                                     esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
-                                } else if (splitSinais[i].contains("Found"))
-                                    numDoencas = splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", "");
+                                else
+                                if (splitSinais[i].contains("desc"))
+                                    esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
                             }
-
+                            /*
                             if (!esp.isEmpty()) {
                                 ArrayList<String> espDiff = new ArrayList<>();
                                 espDiff.add(esp.get(0));
@@ -309,10 +306,18 @@ public class ExamesComplementaresActivity extends BackableActivity {
                                     resposta += espDiff.get(index) + ": " + maior + "%\n";
                                 }
                                 //Toast.makeText(context, resposta, Toast.LENGTH_LONG).show();
-                                startDoencas(resposta);
+                                startDoencas(resposta+"\n"+message);
                             } else
                                 Toast.makeText(context, "Os campos não possuem valores válidos.", Toast.LENGTH_SHORT).show();
-
+                            */
+                            if (esp.isEmpty())
+                                Toast.makeText(context, "Os campos não possuem valores válidos.", Toast.LENGTH_SHORT).show();
+                            else {
+                                String resposta = "";
+                                for (int i = 0; i < esp.size(); i++)
+                                    resposta += esp.get(i) + "\n";
+                                startDoencas(resposta + message);
+                            }
                         }
                     },
                     new Response.ErrorListener() {
