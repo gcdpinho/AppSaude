@@ -265,7 +265,7 @@ public class SintomasActivity extends BackableActivity {
 
                         String[] allSintomas = new String[esp.size()];
                         for (int i = 0; i < esp.size(); i++)
-                            allSintomas[i] = esp.get(i) + "\n";
+                            allSintomas[i] = esp.get(i);
 
 
                         ArrayAdapter<String> autoCompleteAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_dropdown_item_1line, allSintomas){
@@ -310,7 +310,7 @@ public class SintomasActivity extends BackableActivity {
         String url = "http://web-saude.com/websaude/getSintomas.php?";
 
         for (int i=0; i<campos.size(); i++)
-            url += "campo"+ i + "=" + campos.get(i).replaceAll("\n", "") + "&";
+            url += "campo"+ i + "=" + campos.get(i) + "&";
         url = url.substring(0, url.length()-1);
         url = url.replaceAll(" ", "_");
 

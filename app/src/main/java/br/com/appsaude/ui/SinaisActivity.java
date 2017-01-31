@@ -271,10 +271,9 @@ public class SinaisActivity extends BackableActivity {
 
                         String[] allSintomas = new String[esp.size()];
                         String resposta = "";
-                        for (int i = 0; i < esp.size(); i++) {
-                            allSintomas[i] = esp.get(i) + "\n";
-                            resposta += esp.get(i) + "\n";
-                        }
+                        for (int i = 0; i < esp.size(); i++)
+                            allSintomas[i] = esp.get(i);
+
 
                         //Toast.makeText(context, resposta, Toast.LENGTH_LONG).show();
 
@@ -321,7 +320,7 @@ public class SinaisActivity extends BackableActivity {
         String url = "http://web-saude.com/websaude/getSinais.php?";
 
         for (int i=0; i<campos.size(); i++)
-            url += "campo"+ i + "=" + campos.get(i).replaceAll("\n", "") + "&";
+            url += "campo"+ i + "=" + campos.get(i) + "&";
         url = url.substring(0, url.length()-1);
         url = url.replaceAll(" ", "_");
 
