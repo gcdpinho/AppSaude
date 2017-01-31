@@ -6,6 +6,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -42,11 +45,11 @@ public class SinaisActivity extends BackableActivity {
 
         buttonProximo();
         camposVisible();
+        volleyAutoCompleteSintomas();
 
         message = getIntent().getStringExtra(EXTRA_MESSAGE);
         //final Context context = getApplicationContext();
         //Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-
     }
 
     private void camposVisible(){
@@ -246,6 +249,71 @@ public class SinaisActivity extends BackableActivity {
         actionBar.setTextColor(Color.parseColor("#FFFFFF"));
     }
 
+    private void volleyAutoCompleteSintomas(){
+        final Context context = getApplicationContext();
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "http://web-saude.com/websaude/getAllSinais.php";
+
+        JsonObjectRequest req = new JsonObjectRequest(url, new JSONObject(),
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        String[] splitSinais = response.toString().split(",");
+                        ArrayList<String> esp = new ArrayList<>();
+                        for (int i = 0; i < splitSinais.length; i++) {
+                            String[] splitPoints = splitSinais[i].split(":");
+                            if (splitSinais[i].contains("nome"))
+                                esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
+                            else
+                            if (splitSinais[i].contains("desc"))
+                                esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
+                        }
+
+                        String[] allSintomas = new String[esp.size()];
+                        String resposta = "";
+                        for (int i = 0; i < esp.size(); i++) {
+                            allSintomas[i] = esp.get(i) + "\n";
+                            resposta += esp.get(i) + "\n";
+                        }
+
+                        //Toast.makeText(context, resposta, Toast.LENGTH_LONG).show();
+
+                        ArrayAdapter<String> autoCompleteAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_dropdown_item_1line, allSintomas){
+                            @Override
+                            public View getView(int position, View convertView, ViewGroup parent) {
+                                View view = super.getView(position, convertView, parent);
+                                TextView text = (TextView) view.findViewById(android.R.id.text1);
+                                text.setTextColor(Color.BLACK);
+                                return view;
+                            }
+                        };
+                        AutoCompleteTextView autoCompleteEditText1 = (AutoCompleteTextView) findViewById(R.id.editText1);
+                        autoCompleteEditText1.setAdapter(autoCompleteAdapter);
+                        AutoCompleteTextView autoCompleteEditText2 = (AutoCompleteTextView) findViewById(R.id.editText2);
+                        autoCompleteEditText2.setAdapter(autoCompleteAdapter);
+                        AutoCompleteTextView autoCompleteEditText3 = (AutoCompleteTextView) findViewById(R.id.editText3);
+                        autoCompleteEditText3.setAdapter(autoCompleteAdapter);
+                        AutoCompleteTextView autoCompleteEditText4 = (AutoCompleteTextView) findViewById(R.id.editText4);
+                        autoCompleteEditText4.setAdapter(autoCompleteAdapter);
+                        AutoCompleteTextView autoCompleteEditText5 = (AutoCompleteTextView) findViewById(R.id.editText5);
+                        autoCompleteEditText5.setAdapter(autoCompleteAdapter);
+                        AutoCompleteTextView autoCompleteEditText6 = (AutoCompleteTextView) findViewById(R.id.editText6);
+                        autoCompleteEditText6.setAdapter(autoCompleteAdapter);
+
+                    }
+
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+        queue.add(req);
+        //return resposta;
+    }
+
 
     private void volleySinais(ArrayList<String> campos) {
         final Context context = getApplicationContext();
@@ -253,7 +321,7 @@ public class SinaisActivity extends BackableActivity {
         String url = "http://web-saude.com/websaude/getSinais.php?";
 
         for (int i=0; i<campos.size(); i++)
-            url += "campo"+ i + "=" + campos.get(i) + "&";
+            url += "campo"+ i + "=" + campos.get(i).replaceAll("\n", "") + "&";
         url = url.substring(0, url.length()-1);
         url = url.replaceAll(" ", "_");
 
@@ -274,45 +342,6 @@ public class SinaisActivity extends BackableActivity {
                             if (splitSinais[i].contains("desc"))
                                 esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
                         }
-                        /*
-                        if (!esp.isEmpty()) {
-                            ArrayList<String> espDiff = new ArrayList<>();
-                            espDiff.add(esp.get(0));
-                            for (int i = 0; i < esp.size(); i++)
-                                if (!espDiff.contains(esp.get(i)))
-                                    espDiff.add(esp.get(i));
-
-                            int[] counts = new int[espDiff.size()];
-                            for (int i = 0; i < counts.length; i++)
-                                counts[i] = 0;
-                            for (int i = 0; i < esp.size(); i++)
-                                for (int j = 0; j < espDiff.size(); j++)
-                                    if (espDiff.get(j).equals(esp.get(i)))
-                                        counts[j]++;
-
-                            int[] percents = new int[counts.length];
-                            for (int i = 0; i < percents.length; i++)
-                                percents[i] = counts[i] * 100/ Integer.parseInt(numDoencas);
-
-                            String resposta = "";
-                            ArrayList<Integer> maiorPai = new ArrayList<>();
-                            for (int j = 0; j < percents.length; j++) {
-                                int maior = 0;
-                                int index = 0;
-                                for (int i = 0; i < percents.length; i++)
-                                    if (!maiorPai.contains(i) && maior < percents[i]) {
-                                        maior = percents[i];
-                                        index = i;
-                                    }
-                                maiorPai.add(index);
-                                resposta += espDiff.get(index) + ": " + maior + "%\n";
-                            }
-                            //Toast.makeText(context, resposta, Toast.LENGTH_LONG).show();
-                            startExames(resposta+"\n"+message);
-                        }
-                        else
-                            Toast.makeText(context, "Os campos não possuem valores válidos.", Toast.LENGTH_SHORT).show();
-                        */
                         if (esp.isEmpty())
                             Toast.makeText(context, "Os campos não possuem valores válidos.", Toast.LENGTH_SHORT).show();
                         else {
