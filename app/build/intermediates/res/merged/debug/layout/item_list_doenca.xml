@@ -48,7 +48,7 @@
         </LinearLayout>
 
 
-        <br.com.appsaude.TextViewEx
+        <br.com.appsaude.component.TextViewEx
             android:id="@+id/textViewDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

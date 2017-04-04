@@ -1,20 +1,18 @@
 package br.com.appsaude.ui;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.appsaude.R;
+import br.com.appsaude.adapter.EspecialistasAdapter;
+import br.com.appsaude.model.Especialista;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 

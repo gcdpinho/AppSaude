@@ -1,12 +1,11 @@
 package br.com.appsaude.ui;
 
-import android.accounts.AccountManager;
-import android.app.LoaderManager;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,23 +16,21 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import br.com.appsaude.R;
-import br.com.appsaude.util.Util;
+import br.com.appsaude.util.Constants;
+import br.com.appsaude.util.Services;
+import br.com.appsaude.util.Utils;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
@@ -49,7 +46,8 @@ public class SintomasActivity extends BackableActivity{
 
         buttonProximo();
         camposVisible();
-        volleyAutoCompleteSintomas();
+        Services.volleyAutoComplete(this, Constants.URL+"getAllSintomas"+Constants.LANGUAGE, callbackAutoComplete);
+        //volleyAutoCompleteSintomas();
 
     }
 
@@ -225,7 +223,7 @@ public class SintomasActivity extends BackableActivity{
                         break;
                     }
                 if (flag)
-                    volleySintomas(campos);
+                    Services.getVolley(campos, getApplicationContext(), Constants.URL+"getSintomas"+Constants.LANGUAGE, callbackGet);
                 else
                     startSinais("");
             }
@@ -249,6 +247,51 @@ public class SintomasActivity extends BackableActivity{
         actionBar.setTextColor(Color.parseColor("#FFFFFF"));
     }
 
+    Handler.Callback callbackAutoComplete = new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message message) {
+            if(message.arg1 == 1)
+                Utils.errorToast(message.obj.toString(), getApplicationContext()).show();
+            else{
+                ArrayAdapter<String> autoCompleteAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, (String[])message.obj){
+                    @Override
+                    public View getView(int position, View convertView, ViewGroup parent) {
+                        View view = super.getView(position, convertView, parent);
+                        TextView text = (TextView) view.findViewById(android.R.id.text1);
+                        text.setTextColor(Color.BLACK);
+                        return view;
+                    }
+                };
+                AutoCompleteTextView autoCompleteEditText1 = (AutoCompleteTextView) findViewById(R.id.editText1);
+                autoCompleteEditText1.setAdapter(autoCompleteAdapter);
+                AutoCompleteTextView autoCompleteEditText2 = (AutoCompleteTextView) findViewById(R.id.editText2);
+                autoCompleteEditText2.setAdapter(autoCompleteAdapter);
+                AutoCompleteTextView autoCompleteEditText3 = (AutoCompleteTextView) findViewById(R.id.editText3);
+                autoCompleteEditText3.setAdapter(autoCompleteAdapter);
+                AutoCompleteTextView autoCompleteEditText4 = (AutoCompleteTextView) findViewById(R.id.editText4);
+                autoCompleteEditText4.setAdapter(autoCompleteAdapter);
+                AutoCompleteTextView autoCompleteEditText5 = (AutoCompleteTextView) findViewById(R.id.editText5);
+                autoCompleteEditText5.setAdapter(autoCompleteAdapter);
+                AutoCompleteTextView autoCompleteEditText6 = (AutoCompleteTextView) findViewById(R.id.editText6);
+                autoCompleteEditText6.setAdapter(autoCompleteAdapter);
+            }
+            loader.dismiss();
+            return true;
+        }
+    };
+
+    Handler.Callback callbackGet = new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message message) {
+            if(message.arg1 == 1)
+                Utils.errorToast(message.obj.toString(), getApplicationContext()).show();
+            else
+                startSinais((String)message.obj);
+            loader.dismiss();
+            return true;
+        }
+    };
+    /*
     private void volleyAutoCompleteSintomas(){
         final Context context = getApplicationContext();
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -303,7 +346,7 @@ public class SintomasActivity extends BackableActivity{
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         loader.dismiss();
-                        Util.errorToast("Falha na conexão com o servidor. Tente novamente mais tarde.", getApplicationContext()).show();
+                        Utils.errorToast("Falha na conexão com o servidor. Tente novamente mais tarde.", getApplicationContext()).show();
                     }
                 });
 
@@ -339,7 +382,7 @@ public class SintomasActivity extends BackableActivity{
                                     esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
                         }
                         if (esp.isEmpty())
-                            Util.errorToast("Os campos não possuem valores válidos.", getApplicationContext()).show();
+                            Utils.errorToast("Os campos não possuem valores válidos.", getApplicationContext()).show();
                             //Toast.makeText(context, "Os campos não possuem valores válidos.", Toast.LENGTH_SHORT).show();
                         else {
                             String resposta = "";
@@ -354,11 +397,11 @@ public class SintomasActivity extends BackableActivity{
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         loader.dismiss();
-                        Util.errorToast("Falha na conexão com o servidor. Tente novamente mais tarde.", getApplicationContext()).show();
+                        Utils.errorToast("Falha na conexão com o servidor. Tente novamente mais tarde.", getApplicationContext()).show();
                     }
                 });
 
         queue.add(req);
     }
-
+    */
 }

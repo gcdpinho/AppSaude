@@ -1,20 +1,25 @@
 package br.com.appsaude.ui;
 
+import android.app.ProgressDialog;
 import android.content.Context;
-import android.os.Build;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
-import android.view.WindowManager;
 
-import br.com.appsaude.R;
-import br.com.appsaude.util.Util;
+import br.com.appsaude.util.Utils;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class BaseActivity extends AppCompatActivity {
 
+    protected ProgressDialog loader;
+
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
+
+        loader = new ProgressDialog(this);
+        loader.setMessage("Carregando...");
+        loader.setCancelable(false);
+
       //  ButterKnife.bind(this);
         /*
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

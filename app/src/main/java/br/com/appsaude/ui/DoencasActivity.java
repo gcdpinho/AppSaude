@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.appsaude.R;
-import br.com.appsaude.util.Util;
+import br.com.appsaude.adapter.DoencasAdapter;
+import br.com.appsaude.model.Doenca;
+import br.com.appsaude.util.Utils;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
@@ -50,7 +51,7 @@ public class DoencasActivity extends BackableActivity {
         final Context context = getApplicationContext();
 
         if (message == null)
-            Util.errorToast("Nenhuma doença encontrada.", getApplicationContext()).show();
+            Utils.errorToast("Nenhuma doença encontrada.", getApplicationContext()).show();
             //Toast.makeText(context, "Nenhuma doença encontrada.", Toast.LENGTH_SHORT).show();
         else
             if (!message.isEmpty()) {
@@ -101,7 +102,7 @@ public class DoencasActivity extends BackableActivity {
                 }
             }
             else
-               Util.errorToast("Nenhuma doença encontrada.", getApplicationContext()).show();
+               Utils.errorToast("Nenhuma doença encontrada.", getApplicationContext()).show();
                 //Toast.makeText(context, "Nenhuma doença encontrada.", Toast.LENGTH_SHORT).show();
 
         return doencasList;
