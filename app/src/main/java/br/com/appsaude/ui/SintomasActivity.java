@@ -1,6 +1,8 @@
 package br.com.appsaude.ui;
 
 import android.accounts.AccountManager;
+import android.app.LoaderManager;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -31,21 +33,24 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import br.com.appsaude.R;
+import br.com.appsaude.util.Util;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 
-public class SintomasActivity extends BackableActivity {
+public class SintomasActivity extends BackableActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sintomas);
+        loader.show();
         designConfigurations();
 
         buttonProximo();
         camposVisible();
         volleyAutoCompleteSintomas();
+
     }
 
     private void camposVisible(){
@@ -196,6 +201,7 @@ public class SintomasActivity extends BackableActivity {
 
         diag.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                loader.show();
                 boolean flag = false;
                 Context context = getApplicationContext();
                 EditText t1 = (EditText) findViewById(R.id.editText1);
@@ -227,7 +233,7 @@ public class SintomasActivity extends BackableActivity {
     }
 
     public void startSinais(String resposta) {
-
+        loader.dismiss();
         Intent secondActivity = new Intent(this, SinaisActivity.class);
         secondActivity.putExtra(EXTRA_MESSAGE, resposta);
         startActivity(secondActivity);
@@ -289,14 +295,15 @@ public class SintomasActivity extends BackableActivity {
                         autoCompleteEditText5.setAdapter(autoCompleteAdapter);
                         AutoCompleteTextView autoCompleteEditText6 = (AutoCompleteTextView) findViewById(R.id.editText6);
                         autoCompleteEditText6.setAdapter(autoCompleteAdapter);
-
+                        loader.dismiss();
                     }
 
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        loader.dismiss();
+                        Util.errorToast("Falha na conexão com o servidor. Tente novamente mais tarde.", getApplicationContext()).show();
                     }
                 });
 
@@ -332,7 +339,8 @@ public class SintomasActivity extends BackableActivity {
                                     esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
                         }
                         if (esp.isEmpty())
-                            Toast.makeText(context, "Os campos não possuem valores válidos.", Toast.LENGTH_SHORT).show();
+                            Util.errorToast("Os campos não possuem valores válidos.", getApplicationContext()).show();
+                            //Toast.makeText(context, "Os campos não possuem valores válidos.", Toast.LENGTH_SHORT).show();
                         else {
                             String resposta = "";
                             for (int i = 0; i < esp.size(); i++)
@@ -345,7 +353,8 @@ public class SintomasActivity extends BackableActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        loader.dismiss();
+                        Util.errorToast("Falha na conexão com o servidor. Tente novamente mais tarde.", getApplicationContext()).show();
                     }
                 });
 

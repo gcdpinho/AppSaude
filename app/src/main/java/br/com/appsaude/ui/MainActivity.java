@@ -23,6 +23,7 @@ public class MainActivity extends BaseActivity {
     Button btnConnect;
     Button btnAlreadyConnect;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

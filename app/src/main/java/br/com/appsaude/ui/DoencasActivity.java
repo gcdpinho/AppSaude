@@ -2,10 +2,8 @@ package br.com.appsaude.ui;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
+import android.support.v7.app.ActionBar;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,15 +12,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.appsaude.R;
+import br.com.appsaude.util.Util;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
-public class DoencasActivity extends BaseActivity {
+public class DoencasActivity extends BackableActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doencas);
+        loader.show();
         designConfigurations();
 
         String message = getIntent().getStringExtra(EXTRA_MESSAGE);
@@ -33,7 +33,7 @@ public class DoencasActivity extends BaseActivity {
         final DoencasAdapter doencasAdapter = new DoencasAdapter(this, doencas);
         listView.setAdapter(doencasAdapter);
 
-
+        loader.dismiss();
     }
 
     private List<Doenca> geraLista(String message){
@@ -50,7 +50,8 @@ public class DoencasActivity extends BaseActivity {
         final Context context = getApplicationContext();
 
         if (message == null)
-            Toast.makeText(context, "Nenhuma doença encontrada.", Toast.LENGTH_SHORT).show();
+            Util.errorToast("Nenhuma doença encontrada.", getApplicationContext()).show();
+            //Toast.makeText(context, "Nenhuma doença encontrada.", Toast.LENGTH_SHORT).show();
         else
             if (!message.isEmpty()) {
                 String[] splitNewLine = message.split("\n");
@@ -100,7 +101,8 @@ public class DoencasActivity extends BaseActivity {
                 }
             }
             else
-                Toast.makeText(context, "Nenhuma doença encontrada.", Toast.LENGTH_SHORT).show();
+               Util.errorToast("Nenhuma doença encontrada.", getApplicationContext()).show();
+                //Toast.makeText(context, "Nenhuma doença encontrada.", Toast.LENGTH_SHORT).show();
 
         return doencasList;
     }
