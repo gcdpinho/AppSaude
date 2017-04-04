@@ -6,41 +6,48 @@
     density="xhdpi"
     format="10"
     plugin-version="2.3.0"
-    timestamp="1491336966374"
+    timestamp="1491340444880"
     token="-2072208719778987364"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="1420" />
+        duration="1043" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="51" />
     <task
         name="verifier"
-        duration="0" />
+        duration="77" />
+
+    <artifact
+        location="C:\Users\gpinho\Documents\Trabalhos\AppSaude\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\gpinho\Documents\Trabalhos\AppSaude\app\build\outputs\apk\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1491331213016"
+        timestamp="1491340249472"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\gpinho\Documents\Trabalhos\AppSaude\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\gpinho\Documents\Trabalhos\AppSaude\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\gpinho\Documents\Trabalhos\AppSaude\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\gpinho\Documents\Trabalhos\AppSaude\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\gpinho\Documents\Trabalhos\AppSaude\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\gpinho\Documents\Trabalhos\AppSaude\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\gpinho\Documents\Trabalhos\AppSaude\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\gpinho\Documents\Trabalhos\AppSaude\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
@@ -66,15 +73,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1491335501225"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\gpinho\Documents\Trabalhos\AppSaude\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1491335656361"
+        timestamp="1491340444880"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\gpinho\Documents\Trabalhos\AppSaude\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -83,9 +82,5 @@
             location="C:\Users\gpinho\Documents\Trabalhos\AppSaude\app\build\outputs\apk\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
-    <build
-        build-mode="COLD"
-        timestamp="1491336966374"
-        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

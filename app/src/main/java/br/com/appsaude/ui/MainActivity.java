@@ -3,6 +3,7 @@ package br.com.appsaude.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.view.Menu;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 import br.com.appsaude.R;
+import br.com.appsaude.util.Utils;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -62,8 +64,13 @@ public class MainActivity extends BaseActivity {
     }
 
     private void startSintomas(){
-        Intent intent = new Intent(this, SintomasActivity.class);
-        this.startActivity(intent);
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnectedOrConnecting()) {
+            Intent intent = new Intent(this, SintomasActivity.class);
+            this.startActivity(intent);
+        }
+        else
+            Utils.errorToast("Falha na conexão com a Internet. Tente novamente mais tarde.", getApplicationContext()).show();
     }
 
 
