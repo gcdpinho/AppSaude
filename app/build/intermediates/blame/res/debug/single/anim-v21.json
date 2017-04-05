@@ -1,10 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\gpinho\\Documents\\Trabalhos\\AppSaude\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
-        "source": "C:\\Users\\gpinho\\.android\\build-cache\\aa0a77a89a167e0cc2487e450c740db2d1d30959\\output\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+        "merged": "/home/gcdpinho/Git/AppSaude/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/home/gcdpinho/.android/build-cache/2484311986d3babff42ce67e1e6a409bad8ae74c/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "C:\\Users\\gpinho\\Documents\\Trabalhos\\AppSaude\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
-        "source": "C:\\Users\\gpinho\\.android\\build-cache\\aa0a77a89a167e0cc2487e450c740db2d1d30959\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+        "merged": "/home/gcdpinho/Git/AppSaude/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/home/gcdpinho/.android/build-cache/2484311986d3babff42ce67e1e6a409bad8ae74c/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
     }
 ]

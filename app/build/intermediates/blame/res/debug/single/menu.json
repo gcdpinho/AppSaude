@@ -1,10 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\gpinho\\Documents\\Trabalhos\\AppSaude\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_especialistas.xml",
-        "source": "C:\\Users\\gpinho\\Documents\\Trabalhos\\AppSaude\\app\\src\\main\\res\\menu\\menu_especialistas.xml"
+        "merged": "/home/gcdpinho/Git/AppSaude/app/build/intermediates/res/merged/debug/menu/menu_especialistas.xml",
+        "source": "/home/gcdpinho/Git/AppSaude/app/src/main/res/menu/menu_especialistas.xml"
     },
     {
-        "merged": "C:\\Users\\gpinho\\Documents\\Trabalhos\\AppSaude\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
-        "source": "C:\\Users\\gpinho\\Documents\\Trabalhos\\AppSaude\\app\\src\\main\\res\\menu\\menu_main.xml"
+        "merged": "/home/gcdpinho/Git/AppSaude/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/home/gcdpinho/Git/AppSaude/app/src/main/res/menu/menu_main.xml"
     }
 ]

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\gpinho\\Documents\\Trabalhos\\AppSaude\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
+        "outputFile": "/home/gcdpinho/Git/AppSaude/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 99
                 },
                 "from": {
-                    "file": "C:\\Users\\gpinho\\.android\\build-cache\\78b65032557d8abcb76edc570aacf14898133e18\\output\\res\\values-v18\\values-v18.xml",
+                    "file": "/home/gcdpinho/.android/build-cache/69172d1191bd54c8b3d7ceea906293c437b2870d/output/res/values-v18/values-v18.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
