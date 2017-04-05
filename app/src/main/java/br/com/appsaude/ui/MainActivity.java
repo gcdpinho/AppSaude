@@ -43,12 +43,12 @@ public class MainActivity extends BaseActivity {
 
         btnConnect.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startSintomas();
+                startParteCorpo();
             }
         });
         btnAlreadyConnect.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startSintomas();
+                startParteCorpo();
             }
         });
 
@@ -63,10 +63,10 @@ public class MainActivity extends BaseActivity {
         image.setImageResource(photos[i]);
     }
 
-    private void startSintomas(){
+    private void startParteCorpo(){
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if (cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnectedOrConnecting()) {
-            Intent intent = new Intent(this, SintomasActivity.class);
+            Intent intent = new Intent(this, ParteCorpoActivity.class);
             this.startActivity(intent);
         }
         else

@@ -20,77 +20,28 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import br.com.appsaude.R;
-import br.com.appsaude.util.Constants;
 import br.com.appsaude.service.Services;
+import br.com.appsaude.util.Constants;
 import br.com.appsaude.util.Utils;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 
-public class SinaisActivity extends BackableActivity {
-    private String message;
+public class ParteCorpoActivity extends BackableActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sinais);
+        setContentView(R.layout.activity_parte_corpo);
         loader.show();
         designConfigurations();
 
         buttonProximo();
         camposVisible();
-        Services.volleyAutoComplete(this, Constants.URL+"getAllSinais"+Constants.LANGUAGE, callbackAutoComplete);
+        Services.volleyAutoComplete(this, Constants.URL+"getAllParteCorpo"+Constants.LANGUAGE, callbackAutoComplete);
         //volleyAutoCompleteSintomas();
 
-        message = getIntent().getStringExtra(EXTRA_MESSAGE);
-        //final Context context = getApplicationContext();
-        //Toast.makeText(context, message, Toast.LENGTH_LONG).show();
     }
-
-    Handler.Callback callbackAutoComplete = new Handler.Callback() {
-        @Override
-        public boolean handleMessage(Message message) {
-            if(message.arg1 == 1)
-                Utils.errorToast(message.obj.toString(), getApplicationContext()).show();
-            else{
-                ArrayAdapter<String> autoCompleteAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, (String[])message.obj){
-                    @Override
-                    public View getView(int position, View convertView, ViewGroup parent) {
-                        View view = super.getView(position, convertView, parent);
-                        TextView text = (TextView) view.findViewById(android.R.id.text1);
-                        text.setTextColor(Color.BLACK);
-                        return view;
-                    }
-                };
-                AutoCompleteTextView autoCompleteEditText1 = (AutoCompleteTextView) findViewById(R.id.editText1);
-                autoCompleteEditText1.setAdapter(autoCompleteAdapter);
-                AutoCompleteTextView autoCompleteEditText2 = (AutoCompleteTextView) findViewById(R.id.editText2);
-                autoCompleteEditText2.setAdapter(autoCompleteAdapter);
-                AutoCompleteTextView autoCompleteEditText3 = (AutoCompleteTextView) findViewById(R.id.editText3);
-                autoCompleteEditText3.setAdapter(autoCompleteAdapter);
-                AutoCompleteTextView autoCompleteEditText4 = (AutoCompleteTextView) findViewById(R.id.editText4);
-                autoCompleteEditText4.setAdapter(autoCompleteAdapter);
-                AutoCompleteTextView autoCompleteEditText5 = (AutoCompleteTextView) findViewById(R.id.editText5);
-                autoCompleteEditText5.setAdapter(autoCompleteAdapter);
-                AutoCompleteTextView autoCompleteEditText6 = (AutoCompleteTextView) findViewById(R.id.editText6);
-                autoCompleteEditText6.setAdapter(autoCompleteAdapter);
-            }
-            loader.dismiss();
-            return true;
-        }
-    };
-
-    Handler.Callback callbackGet = new Handler.Callback() {
-        @Override
-        public boolean handleMessage(Message message) {
-            if(message.arg1 == 1)
-                Utils.errorToast(message.obj.toString(), getApplicationContext()).show();
-            else
-                startExames((String)message.obj);
-            loader.dismiss();
-            return true;
-        }
-    };
 
     private void camposVisible(){
 
@@ -250,7 +201,6 @@ public class SinaisActivity extends BackableActivity {
                 EditText t5 = (EditText) findViewById(R.id.editText5);
                 EditText t6 = (EditText) findViewById(R.id.editText6);
 
-
                 ArrayList<String> campos = new ArrayList<>();
                 campos.add(new String(t1.getText().toString()));
                 campos.add(new String(t2.getText().toString()));
@@ -265,18 +215,17 @@ public class SinaisActivity extends BackableActivity {
                         break;
                     }
                 if (flag)
-                    Services.getVolley(campos, getApplicationContext(), Constants.URL+"getSinais"+Constants.LANGUAGE, callbackGet);
+                    Services.getVolley(campos, getApplicationContext(), Constants.URL+"getParteCorpo"+Constants.LANGUAGE, callbackGet);
                 else
-                    startExames("");
-
+                    startSintomas("");
             }
         });
     }
 
-    public void startExames(String resposta) {
+    public void startSintomas(String resposta) {
         loader.dismiss();
-        Intent secondActivity = new Intent(this, ExamesComplementaresActivity.class);
-        secondActivity.putExtra(EXTRA_MESSAGE, resposta+message);
+        Intent secondActivity = new Intent(this, SintomasActivity.class);
+        secondActivity.putExtra(EXTRA_MESSAGE, resposta);
         startActivity(secondActivity);
     }
 
@@ -286,14 +235,59 @@ public class SinaisActivity extends BackableActivity {
         ab.setCustomView(R.layout.actionbar_backbutton);
         ab.setDisplayHomeAsUpEnabled(true);
         TextView actionBar = (TextView) findViewById(R.id.actionBarId);
-        actionBar.setText("SINAIS");
+        actionBar.setText("ESTRUTURAS ANATÔMICAS");
         actionBar.setTextColor(Color.parseColor("#FFFFFF"));
     }
+
+    Handler.Callback callbackAutoComplete = new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message message) {
+            if(message.arg1 == 1)
+                Utils.errorToast(message.obj.toString(), getApplicationContext()).show();
+            else{
+                ArrayAdapter<String> autoCompleteAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, (String[])message.obj){
+                    @Override
+                    public View getView(int position, View convertView, ViewGroup parent) {
+                        View view = super.getView(position, convertView, parent);
+                        TextView text = (TextView) view.findViewById(android.R.id.text1);
+                        text.setTextColor(Color.BLACK);
+                        return view;
+                    }
+                };
+                AutoCompleteTextView autoCompleteEditText1 = (AutoCompleteTextView) findViewById(R.id.editText1);
+                autoCompleteEditText1.setAdapter(autoCompleteAdapter);
+                AutoCompleteTextView autoCompleteEditText2 = (AutoCompleteTextView) findViewById(R.id.editText2);
+                autoCompleteEditText2.setAdapter(autoCompleteAdapter);
+                AutoCompleteTextView autoCompleteEditText3 = (AutoCompleteTextView) findViewById(R.id.editText3);
+                autoCompleteEditText3.setAdapter(autoCompleteAdapter);
+                AutoCompleteTextView autoCompleteEditText4 = (AutoCompleteTextView) findViewById(R.id.editText4);
+                autoCompleteEditText4.setAdapter(autoCompleteAdapter);
+                AutoCompleteTextView autoCompleteEditText5 = (AutoCompleteTextView) findViewById(R.id.editText5);
+                autoCompleteEditText5.setAdapter(autoCompleteAdapter);
+                AutoCompleteTextView autoCompleteEditText6 = (AutoCompleteTextView) findViewById(R.id.editText6);
+                autoCompleteEditText6.setAdapter(autoCompleteAdapter);
+            }
+            loader.dismiss();
+            return true;
+        }
+    };
+
+    Handler.Callback callbackGet = new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message message) {
+            if(message.arg1 == 1)
+                Utils.errorToast(message.obj.toString(), getApplicationContext()).show();
+            else
+                startSintomas((String)message.obj);
+            loader.dismiss();
+            return true;
+        }
+    };
     /*
     private void volleyAutoCompleteSintomas(){
         final Context context = getApplicationContext();
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://web-saude.com/websaude/getAllSinais.php";
+        String url = "http://web-saude.com/websaude/getAllSintomas.php";
 
         JsonObjectRequest req = new JsonObjectRequest(url, new JSONObject(),
                 new Response.Listener<JSONObject>() {
@@ -311,12 +305,9 @@ public class SinaisActivity extends BackableActivity {
                         }
 
                         String[] allSintomas = new String[esp.size()];
-                        String resposta = "";
                         for (int i = 0; i < esp.size(); i++)
                             allSintomas[i] = esp.get(i);
 
-
-                        //Toast.makeText(context, resposta, Toast.LENGTH_LONG).show();
 
                         ArrayAdapter<String> autoCompleteAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_dropdown_item_1line, allSintomas){
                             @Override
@@ -355,11 +346,10 @@ public class SinaisActivity extends BackableActivity {
         //return resposta;
     }
 
-
-    private void volleySinais(ArrayList<String> campos) {
+    private void volleySintomas(ArrayList<String> campos) {
         final Context context = getApplicationContext();
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://web-saude.com/websaude/getSinais.php?";
+        String url = "http://web-saude.com/websaude/getSintomas.php?";
 
         for (int i=0; i<campos.size(); i++)
             url += "campo"+ i + "=" + campos.get(i) + "&";
@@ -380,8 +370,8 @@ public class SinaisActivity extends BackableActivity {
                             if (splitSinais[i].contains("nome"))
                                 esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
                             else
-                            if (splitSinais[i].contains("desc"))
-                                esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
+                                if (splitSinais[i].contains("desc"))
+                                    esp.add(splitPoints[splitPoints.length - 1].replaceAll("[\":}]", "").replaceAll("]", ""));
                         }
                         if (esp.isEmpty())
                             Utils.errorToast("Os campos não possuem valores válidos.", getApplicationContext()).show();
@@ -390,9 +380,10 @@ public class SinaisActivity extends BackableActivity {
                             String resposta = "";
                             for (int i = 0; i < esp.size(); i++)
                                 resposta += esp.get(i) + "\n";
-                            startExames(resposta + message);
+                            startSinais(resposta);
                         }
                     }
+
                 },
                 new Response.ErrorListener() {
                     @Override
@@ -404,6 +395,5 @@ public class SinaisActivity extends BackableActivity {
 
         queue.add(req);
     }
-
     */
 }

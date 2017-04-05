@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:baselineAligned="false"
     android:orientation="vertical"
-    tools:context="br.com.appsaude.ui.ExamesComplementaresActivity">
+    tools:context="br.com.appsaude.ui.ParteCorpoActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
                     android:gravity="center"
-                    android:text="@string/exames_complementares"
+                    android:text="@string/parte_corpo"
                     android:textColor="@color/textColorGray"
                     android:textSize="18sp" />
 
@@ -57,7 +58,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@color/transparent"
-                        android:hint="@string/exemplo_exames"
+                        android:hint="@string/exemplo_parte_corpo"
                         android:inputType="textPersonName"
                         android:padding="8dp"
                         android:textColorHint="@color/bordaCampo"
@@ -78,7 +79,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@color/transparent"
-                        android:hint="@string/exemplo_exames"
+                        android:hint="@string/exemplo_parte_corpo"
                         android:inputType="textPersonName"
                         android:padding="8dp"
                         android:textColorHint="@color/bordaCampo"
@@ -108,7 +109,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@color/transparent"
-                        android:hint="@string/exemplo_exames"
+                        android:hint="@string/exemplo_parte_corpo"
                         android:inputType="textPersonName"
                         android:padding="8dp"
                         android:textColorHint="@color/bordaCampo"
@@ -138,7 +139,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@color/transparent"
-                        android:hint="@string/exemplo_exames"
+                        android:hint="@string/exemplo_parte_corpo"
                         android:inputType="textPersonName"
                         android:padding="8dp"
                         android:textColorHint="@color/bordaCampo"
@@ -168,7 +169,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@color/transparent"
-                        android:hint="@string/exemplo_exames"
+                        android:hint="@string/exemplo_parte_corpo"
                         android:inputType="textPersonName"
                         android:padding="8dp"
                         android:textColorHint="@color/bordaCampo"
@@ -198,7 +199,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@color/transparent"
-                        android:hint="@string/exemplo_exames"
+                        android:hint="@string/exemplo_parte_corpo"
                         android:inputType="textPersonName"
                         android:padding="8dp"
                         android:textColorHint="@color/bordaCampo"
@@ -220,7 +221,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="2dp"
-                    android:text="@string/examesLimite"
+                    android:text="@string/parteCorpoLimite"
                     android:textColor="@color/colorPrimary"
                     android:textSize="12sp" />
 
@@ -251,7 +252,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:background="@drawable/button_diagnosticar"
-                    android:text="@string/button_exames"
+                    android:text="@string/button_sinais_sintomas"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="18sp" />

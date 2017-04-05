@@ -17,19 +17,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 import br.com.appsaude.R;
 import br.com.appsaude.util.Constants;
-import br.com.appsaude.util.Services;
+import br.com.appsaude.service.Services;
 import br.com.appsaude.util.Utils;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
@@ -275,7 +267,7 @@ public class ExamesComplementaresActivity extends BackableActivity {
                 if (flag)
                     Services.getVolley(campos, getApplicationContext(), Constants.URL+"getExames"+Constants.LANGUAGE, callbackGet);
                 else
-                    startDoencas(message);
+                    startDoencas("");
 
             }
         });
@@ -284,7 +276,7 @@ public class ExamesComplementaresActivity extends BackableActivity {
     public void startDoencas(String resposta) {
         loader.dismiss();
         Intent secondActivity = new Intent(this, DoencasActivity.class);
-        secondActivity.putExtra(EXTRA_MESSAGE, resposta);
+        secondActivity.putExtra(EXTRA_MESSAGE, resposta+message);
         startActivity(secondActivity);
     }
 

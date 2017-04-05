@@ -23,8 +23,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.SintomasActivity"
+            android:name=".ui.ParteCorpoActivity"
             android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateUnchanged" />
+        <activity
+            android:name=".ui.SintomasActivity"
+            android:parentActivityName=".ui.ParteCorpoActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateUnchanged" />
         <activity
