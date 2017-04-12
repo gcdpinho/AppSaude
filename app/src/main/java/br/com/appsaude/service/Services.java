@@ -25,8 +25,15 @@ import br.com.appsaude.R;
 
 public class Services {
 
-    public static void volleyAutoComplete(final Context context, String url, final Handler.Callback callback){
+    public static void volleyAutoComplete(final Context context, String url, String parteCorpo, final Handler.Callback callback){
         RequestQueue queue = Volley.newRequestQueue(context);
+
+        String[] splitNewLine = parteCorpo.split("\n");
+        url += "?";
+        for (int i=0; i<splitNewLine.length; i++)
+            url += "parteCorpo"+ i + "=" + splitNewLine[i] + "&";
+        url = url.substring(0, url.length()-1);
+        url = url.replaceAll(" ", "_");
 
         JsonObjectRequest req = new JsonObjectRequest(url, new JSONObject(),
                 new Response.Listener<JSONObject>() {

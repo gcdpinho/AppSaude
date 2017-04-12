@@ -39,58 +39,67 @@ public class SinaisActivity extends BackableActivity {
 
         buttonProximo();
         camposVisible();
-        Services.volleyAutoComplete(this, Constants.URL+"getAllSinais"+Constants.LANGUAGE, callbackAutoComplete);
-        //volleyAutoCompleteSintomas();
 
         message = getIntent().getStringExtra(EXTRA_MESSAGE);
+
+        Services.volleyAutoComplete(this, Constants.URL+"getAllSinais"+Constants.LANGUAGE, message, createCallbackAutoComplete());
+        //volleyAutoCompleteSintomas();
+
+
         //final Context context = getApplicationContext();
         //Toast.makeText(context, message, Toast.LENGTH_LONG).show();
     }
 
-    Handler.Callback callbackAutoComplete = new Handler.Callback() {
-        @Override
-        public boolean handleMessage(Message message) {
-            if(message.arg1 == 1)
-                Utils.errorToast(message.obj.toString(), getApplicationContext()).show();
-            else{
-                ArrayAdapter<String> autoCompleteAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, (String[])message.obj){
-                    @Override
-                    public View getView(int position, View convertView, ViewGroup parent) {
-                        View view = super.getView(position, convertView, parent);
-                        TextView text = (TextView) view.findViewById(android.R.id.text1);
-                        text.setTextColor(Color.BLACK);
-                        return view;
-                    }
-                };
-                AutoCompleteTextView autoCompleteEditText1 = (AutoCompleteTextView) findViewById(R.id.editText1);
-                autoCompleteEditText1.setAdapter(autoCompleteAdapter);
-                AutoCompleteTextView autoCompleteEditText2 = (AutoCompleteTextView) findViewById(R.id.editText2);
-                autoCompleteEditText2.setAdapter(autoCompleteAdapter);
-                AutoCompleteTextView autoCompleteEditText3 = (AutoCompleteTextView) findViewById(R.id.editText3);
-                autoCompleteEditText3.setAdapter(autoCompleteAdapter);
-                AutoCompleteTextView autoCompleteEditText4 = (AutoCompleteTextView) findViewById(R.id.editText4);
-                autoCompleteEditText4.setAdapter(autoCompleteAdapter);
-                AutoCompleteTextView autoCompleteEditText5 = (AutoCompleteTextView) findViewById(R.id.editText5);
-                autoCompleteEditText5.setAdapter(autoCompleteAdapter);
-                AutoCompleteTextView autoCompleteEditText6 = (AutoCompleteTextView) findViewById(R.id.editText6);
-                autoCompleteEditText6.setAdapter(autoCompleteAdapter);
+    private Handler.Callback createCallbackAutoComplete() {
+        Handler.Callback callback = new Handler.Callback() {
+            @Override
+            public boolean handleMessage(Message message) {
+                if (message.arg1 == 1)
+                    Utils.errorToast(message.obj.toString(), getApplicationContext()).show();
+                else {
+                    ArrayAdapter<String> autoCompleteAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, (String[]) message.obj) {
+                        @Override
+                        public View getView(int position, View convertView, ViewGroup parent) {
+                            View view = super.getView(position, convertView, parent);
+                            TextView text = (TextView) view.findViewById(android.R.id.text1);
+                            text.setTextColor(Color.BLACK);
+                            return view;
+                        }
+                    };
+                    AutoCompleteTextView autoCompleteEditText1 = (AutoCompleteTextView) findViewById(R.id.editText1);
+                    autoCompleteEditText1.setAdapter(autoCompleteAdapter);
+                    AutoCompleteTextView autoCompleteEditText2 = (AutoCompleteTextView) findViewById(R.id.editText2);
+                    autoCompleteEditText2.setAdapter(autoCompleteAdapter);
+                    AutoCompleteTextView autoCompleteEditText3 = (AutoCompleteTextView) findViewById(R.id.editText3);
+                    autoCompleteEditText3.setAdapter(autoCompleteAdapter);
+                    AutoCompleteTextView autoCompleteEditText4 = (AutoCompleteTextView) findViewById(R.id.editText4);
+                    autoCompleteEditText4.setAdapter(autoCompleteAdapter);
+                    AutoCompleteTextView autoCompleteEditText5 = (AutoCompleteTextView) findViewById(R.id.editText5);
+                    autoCompleteEditText5.setAdapter(autoCompleteAdapter);
+                    AutoCompleteTextView autoCompleteEditText6 = (AutoCompleteTextView) findViewById(R.id.editText6);
+                    autoCompleteEditText6.setAdapter(autoCompleteAdapter);
+                }
+                loader.dismiss();
+                return true;
             }
-            loader.dismiss();
-            return true;
-        }
-    };
+        };
+        return callback;
+    }
 
-    Handler.Callback callbackGet = new Handler.Callback() {
-        @Override
-        public boolean handleMessage(Message message) {
-            if(message.arg1 == 1)
-                Utils.errorToast(message.obj.toString(), getApplicationContext()).show();
-            else
-                startExames((String)message.obj);
-            loader.dismiss();
-            return true;
-        }
-    };
+    private Handler.Callback createCallbackGet() {
+        Handler.Callback callback = new Handler.Callback() {
+            @Override
+            public boolean handleMessage(Message message) {
+                if (message.arg1 == 1)
+                    Utils.errorToast(message.obj.toString(), getApplicationContext()).show();
+                else
+                    startExames((String) message.obj);
+                loader.dismiss();
+                return true;
+            }
+        };
+        return callback;
+    }
 
     private void camposVisible(){
 
@@ -265,7 +274,7 @@ public class SinaisActivity extends BackableActivity {
                         break;
                     }
                 if (flag)
-                    Services.getVolley(campos, getApplicationContext(), Constants.URL+"getSinais"+Constants.LANGUAGE, callbackGet);
+                    Services.getVolley(campos, getApplicationContext(), Constants.URL+"getSinais"+Constants.LANGUAGE, createCallbackGet());
                 else
                     startExames("");
 
